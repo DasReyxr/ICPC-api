@@ -1,0 +1,32 @@
+# AGENTS.md
+
+Static JSON API served via GitHub Pages (no build, tests, or lint toolchain). Data is the product; there is no application code.
+
+## What this repo is
+
+- `index.json` — root directory listing API endpoints; bump `lastUpdated` (ISO date) when endpoints change.
+- `communities/` — competitive programming clubs in Mexico, keyed by state. One `data.json` + one `schema.json`.
+- `credentials/` — catalog of free certificates/programs/certifications/platforms. One `data.json`, one `schema.json`, plus `domains-categories.md` (human-readable enum reference) and a `index.html` test panel.
+- Served at `https://cpc-gallos.github.io/api/...` once merged to `main` (GitHub Pages auto-deploys).
+
+## Conventions to follow (from CONTRIBUTING.md — verify before editing)
+
+- **JSON keys in English** (`name`, `description`, `provider`); **values in Spanish.**
+- All `schema.json` must use draft `2020-12`: first line `"$schema": "https://json-schema.org/draft/2020-12/schema"`.
+- When adding a credential, every enum value must match `credentials/schema.json` exactly:
+  - `providerGroup`: `Big Tech` | `Enterprise Tech` | `Government` | `University` | `Other`
+  - `type`: `program` | `certificate` | `certification` | `platform`
+  - `domain`: `Technology & Computer Science` | `Languages` | `Business & Professional Development`
+  - `category`: see the full enum in `schema.json` (also listed in `credentials/domains-categories.md`). Mismatch breaks schema validation.
+- `credentials/data.json` entries require: `id, name, provider, providerGroup, type, domain, category, url`. `id` is a kebab-case slug of the name. `image` is `""` when no logo. `tags` optional (values seen: `woman`, `mooc`).
+- In `communities/data.json`, every Mexican state is a top-level key (those without clubs use `"clubs": null`, don't omit them). Per-club required: `name`, `status` (`activo` | `inactivo`).
+
+## Verification (no toolchain — do it manually)
+
+- `python -m json.tool < file.json` or `jq . file.json` to confirm valid JSON before committing.
+- Validate against the schema with any JSON Schema 2020-12 validator (e.g. `ajv`) if available; otherwise cross-check enum values against `schema.json` by eye.
+- There are no tests, lint, typecheck, or build steps — do not invent them.
+
+## Workflow
+
+- Default branch is `main`. Changes go via PR (see `CONTRIBUTING.md`); merging to `main` publishes to GitHub Pages automatically — treat `main` as production.

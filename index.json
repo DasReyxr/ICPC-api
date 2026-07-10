@@ -1,0 +1,10 @@
+{
+    "apiName": "CPC-Gallos API",
+    "version": "1.0.0",
+    "description": "API pública de datos recaudados por CPC-Gallos",
+    "endpoints": {
+        "credentials": "https://cpc-gallos.github.io/api/credentials/data.json",
+        "communities": "https://cpc-gallos.github.io/api/communities/data.json"
+    },
+    "lastUpdated": "2026-07-09"
+}
