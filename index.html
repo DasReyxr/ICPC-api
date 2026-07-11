@@ -140,7 +140,7 @@
     <div class="filters-bar">
       <div class="filter-group">
         <label>Buscar</label>
-        <input type="text" id="j-search" placeholder="empresa, programa, tag…" />
+        <input type="text" id="j-search" placeholder="empresa, typea, tag…" />
       </div>
       <div class="filter-group">
         <label>Carrera</label>
@@ -174,7 +174,7 @@
     <div class="filters-bar">
       <div class="filter-group">
         <label>Buscar</label>
-        <input type="text" id="i-search" placeholder="empresa, programa, tag…" />
+        <input type="text" id="i-search" placeholder="empresa, typea, tag…" />
       </div>
       <div class="filter-group">
         <label>Carrera</label>
@@ -324,7 +324,7 @@ function filterJobs() {
   const deg = document.getElementById('j-degree').value;
   const loc = document.getElementById('j-location').value;
   return JOBS.filter(j => {
-    const txt = `${j.company} ${j.program} ${j.description} ${(j.tags||[]).join(' ')}`.toLowerCase();
+    const txt = `${j.company} ${j.type} ${j.description} ${(j.tags||[]).join(' ')}`.toLowerCase();
     if (q   && !txt.includes(q)) return false;
     if (deg && !(Array.isArray(j.degree) ? j.degree.includes(deg) : j.degree===deg)) return false;
     if (loc && j.location !== loc) return false;
@@ -339,10 +339,10 @@ function renderJob(j) {
   const dirty = dirtyJobs.has(j._key);
   return `<div class="card${dirty?' dirty':''}" data-key="${esc(j._key)}">
     <div class="row-top">
-      <h3>${j.url ? `<a href="${esc(j.url)}" target="_blank" rel="noopener">${esc(j.program)}</a>` : esc(j.program)}</h3>
+      <h3>${j.url ? `<a href="${esc(j.url)}" target="_blank" rel="noopener">${esc(j.company)}</a>` : esc(j.company)}</h3>
       <button class="edit-btn" data-action="j-edit" data-key="${esc(j._key)}">✎ editar</button>
     </div>
-    <div class="meta"><span>🏢 ${esc(j.company)}</span>${j.location?`<span>📍 ${esc(j.location)}</span>`:''}</div>
+    <div class="meta"><span>${esc(j.type)}</span>${j.location?`<span>📍 ${esc(j.location)}</span>`:''}</div>
     ${j.description ? `<p class="desc">${esc(j.description)}</p>` : ''}
     <div class="chips">
       ${degs.map(d=>`<span class="chip degree">${esc(d)}</span>`).join('')}
@@ -356,9 +356,9 @@ function renderJobEdit(j) {
   const degs = (Array.isArray(j.degree)?j.degree:[j.degree]).filter(Boolean);
   return `<div class="card editing" data-key="${esc(j._key)}">
     <div class="edit-field"><label>Empresa</label>
-      <input data-field="company" value="${esc(j.company)}" /></div>
-    <div class="edit-field"><label>Programa</label>
-      <input data-field="program" value="${esc(j.program)}" /></div>
+      <input data-field="company" value="${esc(j.type)}" /></div>
+    <div class="edit-field"><label>typea</label>
+      <input data-field="type" value="${esc(j.company)}" /></div>
     <div class="edit-field"><label>Descripción</label>
       <textarea data-field="description">${esc(j.description)}</textarea></div>
     <div class="edit-row-2">
@@ -443,7 +443,7 @@ function filterInternships() {
   const deg = document.getElementById('i-degree').value;
   const loc = document.getElementById('i-location').value;
   return INTERNSHIPS.filter(x => {
-    const txt = `${x.company} ${x.program} ${x.description||''} ${(x.tags||[]).join(' ')}`.toLowerCase();
+    const txt = `${x.company} ${x.type} ${x.description||''} ${(x.tags||[]).join(' ')}`.toLowerCase();
     if (q   && !txt.includes(q)) return false;
     if (deg && !(Array.isArray(x.degree) ? x.degree.includes(deg) : x.degree === deg)) return false;
     if (loc && x.location !== loc) return false;
@@ -458,7 +458,7 @@ function renderInternship(x) {
   const dirty = dirtyInternships.has(x._key);
   return `<div class="card${dirty ? ' dirty' : ''}" data-key="${esc(x._key)}">
     <div class="row-top">
-      <h3>${x.url ? `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.program)}</a>` : esc(x.program)}</h3>
+      <h3>${x.url ? `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.type)}</a>` : esc(x.type)}</h3>
       <button class="edit-btn" data-action="i-edit" data-key="${esc(x._key)}">✎ editar</button>
     </div>
     <div class="meta"><span>🏢 ${esc(x.company)}</span>${x.location ? `<span>📍 ${esc(x.location)}</span>` : ''}</div>
@@ -467,7 +467,7 @@ function renderInternship(x) {
       ${degs.map(d => `<span class="chip degree">${esc(d)}</span>`).join('')}
       ${tags.map(t => `<span class="chip tag">${esc(t)}</span>`).join('')}
     </div>
-    ${x.url ? `<a class="visit-link" href="${esc(x.url)}" target="_blank" rel="noopener">Ver programa ↗</a>` : ''}
+    ${x.url ? `<a class="visit-link" href="${esc(x.url)}" target="_blank" rel="noopener">Ver typea ↗</a>` : ''}
   </div>`;
 }
 
@@ -476,8 +476,8 @@ function renderInternshipEdit(x) {
   return `<div class="card editing" data-key="${esc(x._key)}">
     <div class="edit-field"><label>Empresa</label>
       <input data-field="company" value="${esc(x.company)}" /></div>
-    <div class="edit-field"><label>Programa</label>
-      <input data-field="program" value="${esc(x.program)}" /></div>
+    <div class="edit-field"><label>typea</label>
+      <input data-field="type" value="${esc(x.type)}" /></div>
     <div class="edit-field"><label>Descripción</label>
       <textarea data-field="description">${esc(x.description)}</textarea></div>
     <div class="edit-row-2">
