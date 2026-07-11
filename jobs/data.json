@@ -1,12 +1,67 @@
 {
     "jobs": [
         {
+            "company": "LinkThinks",
+            "program": "LinkThinks Jobs",
+            "description": "Bolsa de trabajo de LinkThinks",
+            "url": "https://www.linkedin.com/company/linkthinks/jobs",
+            "degree": ["IE"],
+            "location": "Aguascalientes",
+            "tags": ["Embebidos"]
+        
+        },
+ 
+        {
+            "company": "Max4Technologies",
+            "program": "Max4Technologies Jobs",
+            "description": "Bolsa de trabajo de Max4Technologies",
+            "url": "https://www.linkedin.com/company/max4-technologies/jobs",
+            "degree": ["IE"],
+            "location": "Aguascalientes",
+            "tags": ["Embebidos"]
+        
+        },
+ 
+        {
+            "company": "BairesDev",
+            "program": "BairesDev Jobs",
+            "description": "Bolsa de trabajo de BairesDev",
+            "url": "https://www.linkedin.com/company/bairesdev/jobs/",
+            "degree": ["IE"],
+            "location": "Remote",
+            "tags": ["Embebidos", "Diseño Digital"]
+        
+        },
+
+
+        {
+            "company": "Electrinet",
+            "program": "Electrinet Jobs",
+            "description": "Bolsa de trabajo de Electrinet",
+            "url": "https://www.electrinet.com.mx/",
+            "degree": ["IE"],
+            "location": "Aguascalientes",
+            "tags": ["Manufactura"]
+        
+        },
+
+        {
+            "company": "Creative Soluciones",
+            "program": "Creative Soluciones Jobs",
+            "description": "Bolsa de trabajo de Creative Soluciones",
+            "url": "https://www.creativesoluciones.com.mx/#works",
+            "degree": ["IE"],
+            "location": "Aguascalientes",
+            "tags": ["Manufactura"]
+        
+        },
+        {
             "company": "Balluff",
             "program": "Balluff Jobs",
             "description": "Bolsa de trabajo de Balluff",
             "url": "https://www.balluff.com/en-nz/careers-at-balluff",
             "degree": ["IE"],
-            "location": "Queretaro",
+            "location": "Aguascalientes",
             "tags": ["Manufactura"]
         
         },
