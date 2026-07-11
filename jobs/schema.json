@@ -7,7 +7,12 @@
       "type": "string"
     },
     "program": {
-      "type": "string"
+      "type": "string",
+      "enum": [
+        "Enterprise",
+        "Searcher"
+      ]
+
     },
     "degree": {
       "type": "string",

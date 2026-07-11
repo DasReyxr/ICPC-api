@@ -1,16 +1,59 @@
 {
     "jobs": [
- {          "company": "Grupo Prodensa",
-            "program": "Grupo Prodensa Jobs",
+        {
+            "company": "Improving Ags",
+            "program": "Enterprise",
+            "description": "Empresa local de software",
+            "url": "https://www.improving.com/careers/mexico/?region=mx#openpositions",
+            "degree": ["ICI","ISC"],
+            "location": ["Aguascalientes"],
+            "tags": ["FullStack", "Cloud"] },
+
+        {
+            "company": "Osef",
+            "program": "Enterprise",
+            "description": "Empresa local de software",
+            "url": "https://www.linkedin.com/company/osef-technology/",
+            "degree": ["IE", "ICI","ISC"],
+            "location": ["Aguascalientes"],
+            "tags": ["AI", "Cloud","TI"] },
+        
+        {
+            "company": "IT-Seekers",
+            "program": "Enterprise",
+            "description": "Buscador",
+            "url": "https://it-seekers.com/trabaja-aqui/",
+            "degree": ["ICI","ISC"],
+            "location": ["CDMX","Aguascalientes"],
+            "tags": ["AI", "Cloud","TI"] },
+        
+        {
+             "company": "Promeritum",
+            "program": "Searcher",
+            "description": "Buscador",
+            "url": "https://vacantes.promeritum.org.mx",
+            "degree": ["IE", "ICI","ISC"],
+            "location": ["México"],
+            "tags": ["Buscador trabajos"] },
+        {          "company": "Howdy",
+            "program": "Enterprise Prodensa Jobs",
+            "description": "Bolsa de trabajo de Hody",
+            "url": "https://www.howdylatam.com/careers",
+            "degree": ["IE", "ICI"],
+            "location": ["Monterrey", "Guadalajara", "Queretaro"],
+            "tags": ["FullStack", "Backend", "FrontEnd"]},
+
+        {          "company": "Grupo Prodensa",
+            "program": "Enterprise Prodensa Jobs",
             "description": "Bolsa de trabajo de Grupo Prodensa",
             "url": "https://www.prodensa.com/careers",
             "degree": ["IE", "ICI"],
-            "location": ["Guadalajara"],
-            "tags": ["Embebidos"]
+            "location": ["Monterrey", "Guadalajara", "Queretaro"],
+            "tags": ["Mantenimiento", "Manufactura", "FrontEnd"]
   },
         {
             "company": "LinkThinks",
-            "program": "LinkThinks Jobs",
+            "program": "Enterprise Jobs",
             "description": "Bolsa de trabajo de LinkThinks",
             "url": "https://www.linkedin.com/company/linkthinks/jobs",
             "degree": ["IE"],
@@ -21,7 +64,7 @@
  
         {
             "company": "Max4Technologies",
-            "program": "Max4Technologies Jobs",
+            "program": "Enterprise Jobs",
             "description": "Bolsa de trabajo de Max4Technologies",
             "url": "https://www.linkedin.com/company/max4-technologies/jobs",
             "degree": ["IE"],
@@ -32,7 +75,7 @@
  
         {
             "company": "BairesDev",
-            "program": "BairesDev Jobs",
+            "program": "Enterprise Jobs",
             "description": "Bolsa de trabajo de BairesDev",
             "url": "https://www.linkedin.com/company/bairesdev/jobs/",
             "degree": ["IE"],
@@ -44,7 +87,7 @@
 
         {
             "company": "Electrinet",
-            "program": "Electrinet Jobs",
+            "program": "Enterprise Jobs",
             "description": "Bolsa de trabajo de Electrinet",
             "url": "https://www.electrinet.com.mx/",
             "degree": ["IE"],
@@ -55,7 +98,7 @@
 
         {
             "company": "Creative Soluciones",
-            "program": "Creative Soluciones Jobs",
+            "program": "Enterprise Soluciones Jobs",
             "description": "Bolsa de trabajo de Creative Soluciones",
             "url": "https://www.creativesoluciones.com.mx/#works",
             "degree": ["IE"],
@@ -65,7 +108,7 @@
         },
         {
             "company": "Balluff",
-            "program": "Balluff Jobs",
+            "program": "Enterprise Jobs",
             "description": "Bolsa de trabajo de Balluff",
             "url": "https://www.balluff.com/en-nz/careers-at-balluff",
             "degree": ["IE"],
@@ -77,7 +120,7 @@
 
         {
             "company": "Siemens",
-            "program": "Siemens Jobs",
+            "program": "Enterprise Jobs",
             "description": "Bolsa de trabajo de Siemens",
             "url": "https://www.linkedin.com/company/siemens/jobs/",
             "degree": ["IE"],
@@ -89,7 +132,7 @@
 
         {
             "company": "LER TechForce",
-            "program": "LER TechForce Jobs",
+            "program": "Enterprise TechForce Jobs",
             "description": "Bolsa de trabajo de LER TechForce",
             "url": "https://www.linkedin.com/company/ler-techforce/jobs/",
             "degree": ["IE"],
@@ -101,7 +144,7 @@
 
         {
             "company": "Valeo",
-            "program": "Valeo Jobs",
+            "program": "Enterprise Jobs",
             "description": "Bolsa de trabajo de Valeo",
             "url": "https://www.linkedin.com/company/valeo/jobs/",
             "degree": ["IE"],
@@ -112,7 +155,7 @@
 
 {
             "company": "Global logic",
-            "program": "Global logic Jobs",
+            "program": "Enterprise logic Jobs",
             "description": "Bolsa de trabajo de Global logic",
             "url": "https://www.linkedin.com/company/globallogic/jobs/",
             "degree": ["IE"],
@@ -123,7 +166,7 @@
 
         {
             "company": "Forvia Hella",
-            "program": "Forvia Hella Jobs",
+            "program": "Enterprise Hella Jobs",
             "description": "Bolsa de trabajo de Forvia Hella",
             "url": "https://www.linkedin.com/company/forviahella/jobs/",
             "degree": ["IE"],
@@ -135,7 +178,7 @@
 
         {
             "company": "Alten",
-            "program": "Alten Jobs",
+            "program": "Enterprise Jobs",
             "description": "Bolsa de trabajo de Alten",
             "url": "https://www.linkedin.com/company/altenmx/jobs/",
             "degree": ["IE"],
@@ -146,7 +189,7 @@
 
         {
             "company": "Continental",
-            "program": "Continental Jobs",
+            "program": "Enterprise Jobs",
             "description": "Bolsa de trabajo de Continental",
             "url": "https://jobs.continental.com/en/#/",
             "degree": ["IE"],
@@ -156,7 +199,7 @@
         },
         {
             "company": "NXP",
-            "program": "NXP Jobs",
+            "program": "Enterprise Jobs",
             "description": "Bolsa de trabajo de NXP",
             "url": "https://nxp.wd3.myworkdayjobs.com/careers",
             "degree": ["IE"],
@@ -168,7 +211,7 @@
 
         {
             "company": "SEMTECH",
-            "program": "SEMTECH Jobs",
+            "program": "Enterprise Jobs",
             "description": "Bolsa de trabajo de SEMTECH",
             "url": "https://www.linkedin.com/company/semtech//",
             "degree": ["IE"],
@@ -179,7 +222,7 @@
 
         {
             "company": "Micron",
-            "program": "Micron Jobs",
+            "program": "Enterprise Jobs",
             "description": "Bolsa de trabajo de Micron",
             "url": "https://www.linkedin.com/company/micron-technology/jobs/",
             "degree": ["IE"],
@@ -190,7 +233,7 @@
 
         {
             "company": "Circuify",
-            "program": "Circuify Jobs",
+            "program": "Enterprise Jobs",
             "description": "Bolsa de trabajo de Circuify",
             "url": "https://www.linkedin.com/company/circuify/",
             "degree": ["IE"],
@@ -201,7 +244,7 @@
 
         {
             "company": "BigBang Semiconductors",
-            "program": "BigBang Jobs",
+            "program": "Enterprise Jobs",
             "description": "Bolsa de trabajo de BigBang Semiconductors",
             "url": "https://www.linkedin.com/company/bigbang-semi/",
             "degree": ["IE"],
@@ -211,7 +254,7 @@
         },
         {
             "company": "Bosch",
-            "program": "Bosch Jobs",
+            "program": "Enterprise Jobs",
             "description": "Bolsa de trabajo de Bosch",
             "url": "https://www.linkedin.com/company/boschmexico/jobs/",
             "degree": ["IE"],
@@ -222,7 +265,7 @@
 
         {
             "company": "Electronic Cats",
-            "program": "Pagina de Linkedin Electronic Cats",
+            "program": "Enterprise de Linkedin Electronic Cats",
             "description": "Empresa de Hacking de aguascalientes",
             "url": "https://www.linkedin.com/company/electroniccats/",
             "degree": ["IE"],
@@ -234,7 +277,7 @@
 
         {
             "company": "AheadComputing",
-            "program": "Ahead Computing Jobs",
+            "program": "Enterprise Computing Jobs",
             "description": "Bolsa de trabajo de AheadComputing, No tiene para interns (Julio2026)",
             "url": "https://www.aheadcomputing.com/careers",
             "degree": ["IE"],
@@ -245,7 +288,7 @@
 
         {
             "company": "Intel",
-                "program": "Intel Jobs",
+                "program": "Enterprise Jobs",
                 "description": "Bolsa de trabajo de intel, tiene vacantes en guadalajara (Tengo entendido que la mayoria son presencial).",
                 "url": "https://intel.wd1.myworkdayjobs.com/External",
                 "degree": ["IE"],
@@ -255,7 +298,7 @@
         },
         {
             "company": "Oracle",
-            "program": "Oracle Next Education ONE",
+            "program": "Enterprise Next Education ONE",
             "description": "Al terminar el programa de certificación ONE, de Oracle, tendrás acceso a la plataforma donde diferentes empresas asociadas con Oracle envían convocatorias de trabajo y podrás acceder al Discord de alumni ONE donde también suele haber distintas ofertas laborales.",
             "url": "https://www.oracle.com/latam/education/oracle-next-education/",
             "degree": ["ISC", "ICI"],
@@ -264,7 +307,7 @@
         },
         {
             "company": "ESCOM IPN",
-            "program": "Bolsa Escom",
+            "program": "Enterprise Escom",
             "description": "Bolsa de trabajo de múltiples empresas en México a través de la página de Facebook ESCOM del IPN.",
             "url": "https://www.escom.ipn.mx/htmls/escomunidad/bolsaTrabajo.php",
             "degree": ["ISC", "ICI"],
@@ -273,7 +316,7 @@
         },
         {
             "company": "Oracle",
-            "program": "Careers Oracle",
+            "program": "Enterprise Oracle",
             "description": "Bolsa de trabajo de Oracle, para conocimientos de la nube, java, etc.",
             "url": "https://careers.oracle.com/jobs/#en/sites/jobsearch/requisitions?location=Mexico&locationId=300000000149103&locationLevel=country&mode=location",
             "degree": ["ISC", "ICI"],
@@ -282,7 +325,7 @@
         },
         {
             "company": "INROADS",
-            "program": "Vinculación con empresas",
+            "program": "Enterprise con empresas",
             "description": "Organización aliada con programas de Google.",
             "url": "https://inroads.org.mx/vinculacion-con-empresas/",
             "degree": ["ISC", "ICI"],
@@ -291,7 +334,7 @@
         },
         {
             "company": "Huawei",
-            "program": "Bolsa de trabajo Huawei",
+            "program": "Enterprise de trabajo Huawei",
             "description": "Huawei ha sido patrocinador de Codeforces por lo que puede que les interese las habilidades de programación competitiva.",
             "url": "https://forum.huawei.com/enterprise/es/collection/667212857101664256",
             "degree": ["ISC", "ICI"],
@@ -300,7 +343,7 @@
         },
         {
             "company": "Microsoft",
-            "program": "Empleos de Microsoft",
+            "program": "Enterprise de Microsoft",
             "description": "Múltiples empleos de Microsoft mayormente en la CDMX.",
             "url": "https://careers.microsoft.com/v2/global/en/home.html",
             "degree": ["ISC", "ICI"],
@@ -309,7 +352,7 @@
         },
         {
             "company": "Google",
-            "program": "Empleos de Google",
+            "program": "Enterprise de Google",
             "description": "Múltiples empleos de la empresa Google en CDMX y Guanajuato.",
             "url": "https://www.google.com/about/careers/applications/jobs/results/?location=Mexico",
             "degree": ["ISC", "ICI"],
@@ -318,7 +361,7 @@
         },
         {
             "company": "Gobierno de México",
-            "program": "Portal Digital de Empleo",
+            "program": "Enterprise Digital de Empleo",
             "description": "Una amplia bolsa de trabajo con mapa incluido para ver a qué ciudades aplicar.",
             "url": "https://www.empleo.gob.mx/PortalDigital",
             "degree": ["ISC", "ICI"],
@@ -327,7 +370,7 @@
         },
         {
             "company": "HackerRank",
-            "program": "HackerRank Jobs",
+            "program": "Enterprise Jobs",
             "description": "Plataforma de programación y validación de skills a través de certificados, ofrece una amplia bolsa de trabajo con empresas como McDonald's, PayPal, Dell, etc.",
             "url": "https://www.hackerrank.com/apply?page=1&countries=Mexico",
             "degree": ["ISC", "ICI"],
@@ -336,7 +379,7 @@
         },
         {
             "company": "P&G",
-            "program": "P&G Careers",
+            "program": "Enterprise&G Careers",
             "description": "Una gran bolsa de trabajo con múltiples ciudades de México para aplicar.",
             "url": "https://www.pgcareers.com/mx/en/search-results?",
             "degree": ["ISC", "ICI"],
@@ -345,7 +388,7 @@
         },
         {
             "company": "Tata Consultancy Services (TCS)",
-            "program": "TCS iBegin",
+            "program": "Enterprise iBegin",
             "description": "Posiciones de empleo por la segunda empresa hindú más grande, Tata Consultancy Services (TCS).",
             "url": "https://ibegin.tcs.com/iBegin/jobs/search",
             "degree": ["ISC", "ICI"],
@@ -354,7 +397,7 @@
         },
         {
             "company": "Odoo",
-            "program": "Bolsa de trabajo programa educativo Odoo",
+            "program": "Enterprise de trabajo programa educativo Odoo",
             "description": "Bolsa de trabajo del programa educativo Odoo.",
             "url": "https://www.odoo.com/es_ES/jobs/bolsa-de-trabajo-programa-educativo-odoo-2422",
             "degree": ["ISC", "ICI"],
@@ -363,7 +406,7 @@
         },
         {
             "company": "Softtek",
-            "program": "Bolsa de trabajo en Softtek",
+            "program": "Enterprise de trabajo en Softtek",
             "description": "Bolsa de trabajo en Softtek.",
             "url": "https://www.softtek.com/es-mx/haz-tu-carrera-en-softtek",
             "degree": ["ISC", "ICI", "IE"],
@@ -372,7 +415,7 @@
         },
         {
             "company": "IBM",
-            "program": "bemyapp / IBM Z Day",
+            "program": "Enterprise / IBM Z Day",
             "description": "No es en sí una bolsa de trabajo, pero suelen poner las fechas y eventos de IBM Z day, la cual es una feria de empleo digital donde necesitas la insignia de IBM Z Xplore Concepts.",
             "url": "https://www.bemyapp.com/events/?&country=Online",
             "degree": ["ISC", "ICI"],
@@ -381,7 +424,7 @@
         },
         {
             "company": "Cognizant",
-            "program": "Comunidad de talentos Cognizant",
+            "program": "Enterprise de talentos Cognizant",
             "description": "Una de las famosas big tech de India (WITCH).",
             "url": "https://careers.cognizant.com/latam-es/comunidad-de-talentos/",
             "degree": ["ISC", "ICI"],
@@ -390,7 +433,7 @@
         },
         {
             "company": "AWS",
-            "program": "AWS Educate Jobs",
+            "program": "Enterprise Educate Jobs",
             "description": "Trabajos para estudiantes certificados en tecnologías de AWS.",
             "url": "https://www.awseducate.com/registration/s/learner-faqs?language=en_US#jobs",
             "degree": ["ISC", "ICI"],
@@ -399,7 +442,7 @@
         },
         {
             "company": "UAA",
-            "program": "Bolsa Universitaria de Trabajo de la UAA",
+            "program": "Enterprise Universitaria de Trabajo de la UAA",
             "description": "Bolsa de trabajo exclusiva para estudiantes y egresados de la UAA.",
             "url": "https://esiima.uaa.mx/bolsadetrabajo/xwgbfebut.jsp",
             "degree": ["ISC", "ICI"],
@@ -408,7 +451,7 @@
         },
         {
             "company": "Improving",
-            "program": "Improving Aguascalientes",
+            "program": "Enterprise Aguascalientes",
             "description": "Empresa internacional de consultoría y desarrollo de software, con fuerte presencia en Aguascalientes.",
             "url": "https://www.improving.com/es-MX/locations/aguascalientes/?region=mx",
             "degree": ["ISC", "ICI"],
@@ -417,7 +460,7 @@
         },
         {
             "company": "Krasamo",
-            "program": "Krasamo Aguascalientes",
+            "program": "Enterprise Aguascalientes",
             "description": "Empresa enfocada en desarrollo de software y soluciones móviles, con presencia en Aguascalientes y EE.UU.",
             "url": "https://www.krasamo.com/",
             "degree": ["ISC", "ICI", "IE"],
@@ -426,7 +469,7 @@
         },
         {
             "company": "Capgemini",
-            "program": "Capgemini Aguascalientes",
+            "program": "Enterprise Aguascalientes",
             "description": "Consultora global con múltiples sedes en México, incluida Aguascalientes.",
             "url": "https://www.capgemini.com/mx-es/sobre-nosotros/locations/",
             "degree": ["ISC", "ICI"],
@@ -435,7 +478,7 @@
         },
         {
             "company": "IT-Seekers",
-            "program": "IT-Seekers Aguascalientes",
+            "program": "Enterprise-Seekers Aguascalientes",
             "description": "Empresa local de reclutamiento y outsourcing de talento en TI.",
             "url": "https://it-seekers.com/",
             "degree": ["ISC", "ICI"],
@@ -444,7 +487,7 @@
         },
         {
             "company": "Tech Mahindra",
-            "program": "Tech Mahindra Aguascalientes",
+            "program": "Enterprise Mahindra Aguascalientes",
             "description": "Empresa global de servicios de TI con oficinas en Aguascalientes.",
             "url": "https://www.techmahindra.com/",
             "degree": ["ISC", "ICI"],
@@ -453,7 +496,7 @@
         },
         {
             "company": "Kiubix",
-            "program": "Kiubix Aguascalientes",
+            "program": "Enterprise Aguascalientes",
             "description": "Empresa local enfocada en desarrollo de software y transformación digital.",
             "url": "https://kiubix.mx/",
             "degree": ["ISC", "ICI"],
@@ -462,7 +505,7 @@
         },
         {
             "company": "Maindsoft",
-            "program": "Maindsoft Aguascalientes",
+            "program": "Enterprise Aguascalientes",
             "description": "Especializada en soluciones web y de software a la medida, ubicada en Aguascalientes.",
             "url": "https://maindsoft.net/",
             "degree": ["ISC", "ICI"],
@@ -471,7 +514,7 @@
         },
         {
             "company": "Grupo Nauko",
-            "program": "Grupo Nauko Aguascalientes",
+            "program": "Enterprise Nauko Aguascalientes",
             "description": "Empresa enfocada en tecnología industrial e ingeniería con sede en Aguascalientes.",
             "url": "https://www.gruponauko.com/#/home",
             "degree":["IE"],
@@ -480,7 +523,7 @@
         },
         {
             "company": "TPX Security",
-            "program": "TPX Security Aguascalientes",
+            "program": "Enterprise Security Aguascalientes",
             "description": "Empresa local especializada en ciberseguridad.",
             "url": "https://tpx.security/",
             "degree": ["ISC", "ICI"],
@@ -489,7 +532,7 @@
         },
         {
             "company": "Borealix",
-            "program": "Borealix Aguascalientes",
+            "program": "Enterprise Aguascalientes",
             "description": "Startup tecnológica con enfoque en soluciones basadas en IA y ciencia de datos.",
             "url": "https://borealix.io/",
             "degree": ["ISC", "ICI"],
@@ -498,7 +541,7 @@
         },
         {
             "company": "Grupo Sinco",
-            "program": "Grupo Sinco Aguascalientes",
+            "program": "Enterprise Sinco Aguascalientes",
             "description": "Empresa de Digital Manufacturing Solutions especializada en la digitalización de procesos industriales, implementando soluciones de calidad, trazabilidad, ejecución en piso y control documental, integradas con hardware industrial. También ofrece servicios de seguridad de la información e implementación, capacitación y soporte de SIIGO/ASPEL.",
             "url": "https://gruposinco.com.mx/",
             "degree": ["ISC", "ICI"],
@@ -507,7 +550,7 @@
         },
         {
             "company": "Casa de Software Aguascalientes",
-            "program": "Casa de Software",
+            "program": "Enterprise de Software",
             "description": "Consultora de TI de Aguascalientes especializada en implementación de ERP, desarrollo de software, infraestructura tecnológica, soporte, licenciamiento y consultoría para la transformación digital de empresas.",
             "url": "https://casadesoftware.com.mx",
             "degree": ["ISC", "ICI"],
@@ -516,7 +559,7 @@
         },
         {
             "company": "ISA Avanzados",
-            "program": "ISA Avanzados",
+            "program": "Enterprise Avanzados",
             "description": "Empresa mexicana de consultoría e integración de tecnologías de información. Su portafolio incluye ciberseguridad, infraestructura, nube, comunicaciones unificadas, desarrollo de aplicaciones, Microsoft Azure, virtualización y servicios administrados.",
             "url": "https://www.isavanzados.com.mx",
             "degree": ["ISC", "ICI"],
@@ -525,7 +568,7 @@
         },
         {
             "company": "Avatuen Tecnología Administrativa",
-            "program": "Avatuen",
+            "program": "Enterprise",
             "description": "Empresa enfocada en digitalización de procesos empresariales mediante software administrativo, automatización, consultoría tecnológica e implementación de soluciones para la gestión empresarial.",
             "url": "https://avatuen.com",
             "degree": ["ISC", "ICI"],
@@ -534,7 +577,7 @@
         },
         {
             "company": "Techno Consulting",
-            "program": "V2 Techno Consulting",
+            "program": "Enterprise Techno Consulting",
             "description": "Consultora especializada en infraestructura tecnológica, redes, soporte técnico, venta de hardware, soluciones empresariales e integración de tecnologías para mejorar la competitividad de las organizaciones.",
             "url": "https://www.v2technoconsulting.com",
             "degree": ["ISC", "ICI"],
@@ -543,7 +586,7 @@
         },
         {
             "company": "Área de Tecnología",
-            "program": "Área de Tecnología",
+            "program": "Enterprise de Tecnología",
             "description": "Empresa dedicada a infraestructura TI, soporte especializado, redes, servidores, servicios administrados, mantenimiento y consultoría informática para empresas.",
             "url": "https://areadetecnologia.com.mx",
             "degree": ["ISC", "ICI"],
@@ -552,7 +595,7 @@
         },
         {
             "company": "Sostic",
-            "program": "Sostic",
+            "program": "Enterprise",
             "description": "Consultora especializada en infraestructura, computación en la nube, ciberseguridad, respaldo de información, continuidad de negocio y soporte empresarial.",
             "url": "https://sostic.com.mx",
             "degree": ["ISC", "ICI"],
@@ -561,7 +604,7 @@
         },
         {
             "company": "SIACOM Technosolutions México",
-            "program": "SIACOM",
+            "program": "Enterprise",
             "description": "Empresa dedicada a la integración de soluciones de TI, infraestructura tecnológica, comunicaciones, centros de datos, servicios administrados y consultoría.",
             "url": "https://siacom.mx",
             "degree": ["ISC", "ICI"],
@@ -570,7 +613,7 @@
         },
         {
             "company": "Palomino Sistemas y Tecnología",
-            "program": "Palomino Sistemas",
+            "program": "Enterprise Sistemas",
             "description": "Empresa especializada en desarrollo de software empresarial, infraestructura tecnológica, soporte, redes y consultoría informática.",
             "url": "https://palominosistemas.com.mx",
             "degree": ["ISC", "ICI"],
@@ -579,7 +622,7 @@
         },
         {
             "company": "TEKNIUM",
-            "program": "Teknium",
+            "program": "Enterprise",
             "description": "Empresa especializada en soluciones tecnológicas, infraestructura, videovigilancia, redes, seguridad electrónica, desarrollo de software, soporte y servicios para empresas.",
             "url": "https://teknium.mx",
             "degree": ["ISC", "ICI"],
@@ -588,7 +631,7 @@
         },
         {
             "company": "GEOM Software",
-            "program": "GEOM Software",
+            "program": "Enterprise Software",
             "description": "Empresa de desarrollo de software que ofrece sistemas empresariales, aplicaciones web y móviles, soluciones GIS, CRM, ERP y proyectos a la medida.",
             "url": "https://geomsoftware.com",
             "degree": ["ISC", "ICI"],
@@ -597,7 +640,7 @@
         },
         {
             "company": "NESis",
-            "program": "NESis",
+            "program": "Enterprise",
             "description": "Empresa de desarrollo de software orientada a soluciones empresariales, automatización de procesos y sistemas personalizados.",
             "url": "https://nesis.com.mx",
             "degree": ["ISC", "ICI"],
@@ -606,7 +649,7 @@
         },
         {
             "company": "TravelKey",
-            "program": "TravelKey",
+            "program": "Enterprise",
             "description": "Empresa de software especializada en plataformas para agencias de viajes, operadores turísticos y soluciones para la industria del turismo.",
             "url": "https://travelkey.com.mx",
             "degree": ["ISC", "ICI"],
@@ -615,7 +658,7 @@
         },
         {
             "company": "AGMLAT",
-            "program": "AGMLAT",
+            "program": "Enterprise",
             "description": "Empresa dedicada al desarrollo de software, aplicaciones empresariales, soluciones digitales e innovación tecnológica.",
             "url": "https://agmlat.com",
             "degree": ["ISC", "ICI"],
@@ -624,7 +667,7 @@
         },
         {
             "company": "OMEGA Tecno Soluciones",
-            "program": "OMEGA Tecno Soluciones",
+            "program": "Enterprise Tecno Soluciones",
             "description": "Empresa que ofrece desarrollo de software, soporte técnico, infraestructura, mantenimiento y servicios tecnológicos para organizaciones.",
             "url": "https://omegatecnosoluciones.com",
             "degree": ["ISC", "ICI"],
@@ -633,7 +676,7 @@
         },
         {
             "company": "ClovernetMX",
-            "program": "ClovernetMX",
+            "program": "Enterprise",
             "description": "Consultora informática especializada en desarrollo de software, mantenimiento de sistemas, infraestructura tecnológica y soluciones empresariales.",
             "url": "https://clovernetmx.com",
             "degree": ["ISC", "ICI"],
@@ -642,7 +685,7 @@
         },
         {
             "company": "ACACIA Consultoría en Informática y Cómputo",
-            "program": "ACACIA",
+            "program": "Enterprise",
             "description": "Consultora de tecnologías de información.",
             "url": "https://www.acaciaco.com.mx/",
             "degree": ["ISC", "ICI"],
@@ -651,7 +694,7 @@
         },
         {
             "company": "Maz Asesores TI",
-            "program": "Maz Asesores TI",
+            "program": "Enterprise Asesores TI",
             "description": "Consultora especializada en asesoría, implementación de infraestructura tecnológica, soporte, seguridad informática y soluciones de TI.",
             "url": "https://mazasesoresti.com",
             "degree": ["ISC", "ICI"],
@@ -660,7 +703,7 @@
         },
         {
             "company": "TIPROMX",
-            "program": "TIPROMX",
+            "program": "Enterprise",
             "description": "Empresa de desarrollo de software, sistemas administrativos, consultoría tecnológica, soporte e implementación de soluciones empresariales.",
             "url": "https://tipromx.com",
             "degree": ["ISC", "ICI"],
@@ -669,7 +712,7 @@
         },
         {
             "company": "Sithec Mex",
-            "program": "Sithec Mex",
+            "program": "Enterprise Mex",
             "description": "Empresa de desarrollo de software a la medida, aplicaciones móviles, consultoría tecnológica e integración de soluciones empresariales.",
             "url": "https://sithec.com.mx",
             "degree": ["ISC", "ICI"],
@@ -678,7 +721,7 @@
         },
         {
             "company": "SIETI",
-            "program": "SIETI",
+            "program": "Enterprise",
             "description": "Empresa de ingeniería en infraestructura tecnológica especializada en ciberseguridad, redes, CCTV con IA, telefonía VoIP, servidores, hosting y asistencia técnica.",
             "url": "https://www.sieti.com.mx",
             "degree": ["ISC", "ICI"],
@@ -687,7 +730,7 @@
         },
         {
             "company": "Chao Web Studio",
-            "program": "Chao Web Studio",
+            "program": "Enterprise Web Studio",
             "description": "Empresa de desarrollo web y móvil especializada en UX/UI, comercio electrónico, inteligencia artificial, GIS y soluciones digitales.",
             "url": "https://www.chaowebstudio.com.mx",
             "degree": ["ISC", "ICI"],
@@ -696,7 +739,7 @@
         },
         {
             "company": "Grupo InAvan",
-            "program": "Grupo InAvan",
+            "program": "Enterprise InAvan",
             "description": "Empresa dedicada a automatización industrial, sistemas SCADA, integración de procesos industriales, robótica e Industria 4.0.",
             "url": "https://www.grupo-inavan.com",
             "degree":["IE"],
@@ -705,7 +748,7 @@
         },
         {
             "company": "Sindustry",
-            "program": "Sindustry",
+            "program": "Enterprise",
             "description": "Empresa especializada en automatización industrial, integración tecnológica, IIoT, sistemas de control y digitalización de procesos productivos.",
             "url": "https://sindustry.mx",
             "degree":["IE"],
@@ -714,7 +757,7 @@
         },
         {
             "company": "Investel",
-            "program": "Investel",
+            "program": "Enterprise",
             "description": "Consultora enfocada en blockchain, IoT, ciberseguridad, desarrollo de software e innovación tecnológica para empresas.",
             "url": "https://www.investel.mx",
             "degree": ["ISC", "ICI"],
@@ -723,7 +766,7 @@
         },
         {
             "company": "SIB Solutions",
-            "program": "SIB Solutions",
+            "program": "Enterprise Solutions",
             "description": "Empresa especializada en infraestructura tecnológica, cableado estructurado, redes, videovigilancia, centros de datos y servicios administrados.",
             "url": "https://www.sib-solutions.com.mx",
             "degree":["IE"],
@@ -732,7 +775,7 @@
         },
         {
             "company": "Blau IT Hub",
-            "program": "Blau IT Hub",
+            "program": "Enterprise IT Hub",
             "description": "Consultora de TI orientada a capacitación oficial, certificaciones, ciberseguridad, infraestructura, virtualización, bases de datos, nube y servicios profesionales multimarca.",
             "url": "https://blaumx.com",
             "degree": ["ISC", "ICI"],
@@ -741,7 +784,7 @@
         },
         {
             "company": "Prosoluciones TI",
-            "program": "Prosoluciones TI",
+            "program": "Enterprise TI",
             "description": "Empresa hidrocálida especializada en desarrollo de software, ciencia de datos, inteligencia artificial, realidad aumentada, comunicaciones y proyectos tecnológicos para empresas e instituciones.",
             "url": "https://prosolucionesti.com",
             "degree": ["ISC", "ICI"],
@@ -750,7 +793,7 @@
         },
         {
             "company": "CSA Consultores",
-            "program": "CSA Consultores",
+            "program": "Enterprise Consultores",
             "description": "Consultora de Aguascalientes especializada en software de gestión, infraestructura tecnológica, consultoría informática, licenciamiento, soporte y cumplimiento de software legal.",
             "url": "https://www.csags.com.mx",
             "degree": ["ISC", "ICI"],
@@ -759,7 +802,7 @@
         },
         {
             "company": "INFINITO Asesoría en Tecnología de Información y Redes",
-            "program": "INFINITO",
+            "program": "Enterprise",
             "description": "Consultora enfocada en redes, infraestructura y soluciones de TI.",
             "url": "",
             "degree": ["ISC", "ICI"],
@@ -768,7 +811,7 @@
         },
         {
             "company": "Kattis",
-            "program": "Kattis Jobs",
+            "program": "Enterprise Jobs",
             "description": "Plataforma para resolver problemas de programación; su sección de empleos incluye algunas empresas americanas interesadas en programadores con mucha habilidad.",
             "url": "https://open.kattis.com/jobs",
             "degree": ["ISC", "ICI"],
@@ -777,7 +820,7 @@
         },
         {
             "company": "HackerEarth",
-            "program": "HackerEarth Jobs",
+            "program": "Enterprise Jobs",
             "description": "Concursos de programación competitiva para obtener oportunidades de internships y empleos.",
             "url": "https://www.hackerearth.com/jobs/",
             "degree": ["ISC", "ICI"],
@@ -786,7 +829,7 @@
         },
         {
             "company": "Codeforces",
-            "program": "Listado de empresas Codeforces",
+            "program": "Enterprise de empresas Codeforces",
             "description": "Listado de empresas que les interesan los participantes de competencias de programación competitiva (Telegram ha sido patrocinador de Codeforces).",
             "url": "https://codeforces.com/blog/entry/113837",
             "degree": ["ISC", "ICI"],
@@ -795,7 +838,7 @@
         },
         {
             "company": "Cisco",
-            "program": "Cisco Talent Bridge",
+            "program": "Enterprise Talent Bridge",
             "description": "Se especializan más en el área de redes.",
             "url": "https://www.netacad.com/careers/talent-bridge",
             "degree": ["ISC", "ICI"],
