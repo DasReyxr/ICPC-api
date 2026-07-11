@@ -1,12 +1,20 @@
 {
     "jobs": [
+ {          "company": "Grupo Prodensa",
+            "program": "Grupo Prodensa Jobs",
+            "description": "Bolsa de trabajo de Grupo Prodensa",
+            "url": "https://www.prodensa.com/careers",
+            "degree": ["IE", "ICI"],
+            "location": ["Guadalajara"],
+            "tags": ["Embebidos"]
+  },
         {
             "company": "LinkThinks",
             "program": "LinkThinks Jobs",
             "description": "Bolsa de trabajo de LinkThinks",
             "url": "https://www.linkedin.com/company/linkthinks/jobs",
             "degree": ["IE"],
-            "location": "Aguascalientes",
+            "location": ["Aguascalientes"],
             "tags": ["Embebidos"]
         
         },
@@ -17,7 +25,7 @@
             "description": "Bolsa de trabajo de Max4Technologies",
             "url": "https://www.linkedin.com/company/max4-technologies/jobs",
             "degree": ["IE"],
-            "location": "Aguascalientes",
+            "location": ["Aguascalientes"],
             "tags": ["Embebidos"]
         
         },
@@ -28,7 +36,7 @@
             "description": "Bolsa de trabajo de BairesDev",
             "url": "https://www.linkedin.com/company/bairesdev/jobs/",
             "degree": ["IE"],
-            "location": "Remote",
+            "location": ["Remote"],
             "tags": ["Embebidos", "Diseño Digital"]
         
         },
@@ -40,7 +48,7 @@
             "description": "Bolsa de trabajo de Electrinet",
             "url": "https://www.electrinet.com.mx/",
             "degree": ["IE"],
-            "location": "Aguascalientes",
+            "location": ["Aguascalientes"],
             "tags": ["Manufactura"]
         
         },
@@ -51,7 +59,7 @@
             "description": "Bolsa de trabajo de Creative Soluciones",
             "url": "https://www.creativesoluciones.com.mx/#works",
             "degree": ["IE"],
-            "location": "Aguascalientes",
+            "location": ["Aguascalientes"],
             "tags": ["Manufactura"]
         
         },
@@ -61,7 +69,7 @@
             "description": "Bolsa de trabajo de Balluff",
             "url": "https://www.balluff.com/en-nz/careers-at-balluff",
             "degree": ["IE"],
-            "location": "Aguascalientes",
+            "location": ["Aguascalientes"],
             "tags": ["Manufactura"]
         
         },
@@ -73,7 +81,7 @@
             "description": "Bolsa de trabajo de Siemens",
             "url": "https://www.linkedin.com/company/siemens/jobs/",
             "degree": ["IE"],
-            "location": "Queretaro",
+            "location": ["Queretaro"],
             "tags": ["Manufactura"]
         
         },
@@ -85,7 +93,7 @@
             "description": "Bolsa de trabajo de LER TechForce",
             "url": "https://www.linkedin.com/company/ler-techforce/jobs/",
             "degree": ["IE"],
-            "location": "Queretaro",
+            "location": ["Queretaro"],
             "tags": ["Embebidos"]
         
         },
@@ -97,7 +105,7 @@
             "description": "Bolsa de trabajo de Valeo",
             "url": "https://www.linkedin.com/company/valeo/jobs/",
             "degree": ["IE"],
-            "location": "Queretaro",
+            "location": ["Queretaro"],
             "tags": ["Manufactura"]
         
         },
@@ -108,7 +116,7 @@
             "description": "Bolsa de trabajo de Global logic",
             "url": "https://www.linkedin.com/company/globallogic/jobs/",
             "degree": ["IE"],
-            "location": "Guadalajara",
+            "location": ["Guadalajara"],
             "tags": ["Embebidos"]
         
         },
@@ -119,7 +127,7 @@
             "description": "Bolsa de trabajo de Forvia Hella",
             "url": "https://www.linkedin.com/company/forviahella/jobs/",
             "degree": ["IE"],
-            "location": "Tlaquepaque, Jalisco",
+            "location": ["Tlaquepaque, Jalisco"],
             "tags": ["Manufactura"]
         
         },
@@ -131,7 +139,7 @@
             "description": "Bolsa de trabajo de Alten",
             "url": "https://www.linkedin.com/company/altenmx/jobs/",
             "degree": ["IE"],
-            "location": "Queretaro",
+            "location": ["Queretaro"],
             "tags": ["Embebidos"]
         
         },
@@ -142,7 +150,7 @@
             "description": "Bolsa de trabajo de Continental",
             "url": "https://jobs.continental.com/en/#/",
             "degree": ["IE"],
-            "location": "Guadalajara",
+            "location": ["Guadalajara"],
             "tags": ["PLC"]
         
         },
@@ -152,7 +160,7 @@
             "description": "Bolsa de trabajo de NXP",
             "url": "https://nxp.wd3.myworkdayjobs.com/careers",
             "degree": ["IE"],
-            "location": "Guadalajara",
+            "location": ["Guadalajara"],
             "tags": ["Embebidos"]
         
         },
@@ -164,7 +172,7 @@
             "description": "Bolsa de trabajo de SEMTECH",
             "url": "https://www.linkedin.com/company/semtech//",
             "degree": ["IE"],
-            "location": "Aguascalientes",
+            "location": ["Aguascalientes"],
             "tags": ["Layout"]
         
         },
@@ -175,7 +183,7 @@
             "description": "Bolsa de trabajo de Micron",
             "url": "https://www.linkedin.com/company/micron-technology/jobs/",
             "degree": ["IE"],
-            "location": "Aguascalientes",
+            "location": ["Aguascalientes"],
             "tags": ["Layout"]
         
         },
@@ -186,7 +194,7 @@
             "description": "Bolsa de trabajo de Circuify",
             "url": "https://www.linkedin.com/company/circuify/",
             "degree": ["IE"],
-            "location": "Aguascalientes",
+            "location": ["Aguascalientes"],
             "tags": ["Layout"]
         
         },
@@ -197,7 +205,7 @@
             "description": "Bolsa de trabajo de BigBang Semiconductors",
             "url": "https://www.linkedin.com/company/bigbang-semi/",
             "degree": ["IE"],
-            "location": "Aguascalientes",
+            "location": ["Aguascalientes"],
             "tags": ["Layout"]
         
         },
@@ -207,7 +215,7 @@
             "description": "Bolsa de trabajo de Bosch",
             "url": "https://www.linkedin.com/company/boschmexico/jobs/",
             "degree": ["IE"],
-            "location": "Guadalajara",
+            "location": ["Guadalajara"],
             "tags": ["Embebidos", "PLC"]
         
         },
@@ -218,7 +226,7 @@
             "description": "Empresa de Hacking de aguascalientes",
             "url": "https://www.linkedin.com/company/electroniccats/",
             "degree": ["IE"],
-            "location": "Aguascalientes",
+            "location": ["Aguascalientes"],
             "tags": ["Embebidos", "Hacking"]
         
         },
@@ -230,7 +238,7 @@
             "description": "Bolsa de trabajo de AheadComputing, No tiene para interns (Julio2026)",
             "url": "https://www.aheadcomputing.com/careers",
             "degree": ["IE"],
-            "location": "Guadalajara",
+            "location": ["Guadalajara"],
             "tags": ["Diseño Digital", "FPGA"]
         
         },
@@ -241,7 +249,7 @@
                 "description": "Bolsa de trabajo de intel, tiene vacantes en guadalajara (Tengo entendido que la mayoria son presencial).",
                 "url": "https://intel.wd1.myworkdayjobs.com/External",
                 "degree": ["IE"],
-                "location": "Guadalajara",
+                "location": ["Guadalajara"],
                 "tags": ["Intel", "Diseño Digital", "FPGA"]
             
         },
@@ -251,7 +259,7 @@
             "description": "Al terminar el programa de certificación ONE, de Oracle, tendrás acceso a la plataforma donde diferentes empresas asociadas con Oracle envían convocatorias de trabajo y podrás acceder al Discord de alumni ONE donde también suele haber distintas ofertas laborales.",
             "url": "https://www.oracle.com/latam/education/oracle-next-education/",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["Oracle", "ONE", "Certificación", "Empleo"]
         },
         {
@@ -260,7 +268,7 @@
             "description": "Bolsa de trabajo de múltiples empresas en México a través de la página de Facebook ESCOM del IPN.",
             "url": "https://www.escom.ipn.mx/htmls/escomunidad/bolsaTrabajo.php",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["Bolsa de trabajo", "IPN", "Facebook"]
         },
         {
@@ -269,7 +277,7 @@
             "description": "Bolsa de trabajo de Oracle, para conocimientos de la nube, java, etc.",
             "url": "https://careers.oracle.com/jobs/#en/sites/jobsearch/requisitions?location=Mexico&locationId=300000000149103&locationLevel=country&mode=location",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["Oracle", "Java", "Nube", "Empleo"]
         },
         {
@@ -278,7 +286,7 @@
             "description": "Organización aliada con programas de Google.",
             "url": "https://inroads.org.mx/vinculacion-con-empresas/",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["Google", "Vinculación", "Empleo"]
         },
         {
@@ -287,7 +295,7 @@
             "description": "Huawei ha sido patrocinador de Codeforces por lo que puede que les interese las habilidades de programación competitiva.",
             "url": "https://forum.huawei.com/enterprise/es/collection/667212857101664256",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["Huawei", "Programación Competitiva", "Empleo"]
         },
         {
@@ -296,7 +304,7 @@
             "description": "Múltiples empleos de Microsoft mayormente en la CDMX.",
             "url": "https://careers.microsoft.com/v2/global/en/home.html",
             "degree": ["ISC", "ICI"],
-            "location": "CDMX, México",
+            "location": ["CDMX"],
             "tags": ["Microsoft", "Empleo", "CDMX"]
         },
         {
@@ -305,7 +313,7 @@
             "description": "Múltiples empleos de la empresa Google en CDMX y Guanajuato.",
             "url": "https://www.google.com/about/careers/applications/jobs/results/?location=Mexico",
             "degree": ["ISC", "ICI"],
-            "location": "CDMX, Guanajuato, México",
+            "location": ["CDMX", "Guanajuato", "México"],
             "tags": ["Google", "Empleo"]
         },
         {
@@ -314,7 +322,7 @@
             "description": "Una amplia bolsa de trabajo con mapa incluido para ver a qué ciudades aplicar.",
             "url": "https://www.empleo.gob.mx/PortalDigital",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["Gobierno", "Empleo", "Bolsa de trabajo"]
         },
         {
@@ -323,7 +331,7 @@
             "description": "Plataforma de programación y validación de skills a través de certificados, ofrece una amplia bolsa de trabajo con empresas como McDonald's, PayPal, Dell, etc.",
             "url": "https://www.hackerrank.com/apply?page=1&countries=Mexico",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["HackerRank", "Certificación", "Empleo"]
         },
         {
@@ -332,7 +340,7 @@
             "description": "Una gran bolsa de trabajo con múltiples ciudades de México para aplicar.",
             "url": "https://www.pgcareers.com/mx/en/search-results?",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["P&G", "Empleo"]
         },
         {
@@ -341,7 +349,7 @@
             "description": "Posiciones de empleo por la segunda empresa hindú más grande, Tata Consultancy Services (TCS).",
             "url": "https://ibegin.tcs.com/iBegin/jobs/search",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["TCS", "Empleo", "India"]
         },
         {
@@ -350,7 +358,7 @@
             "description": "Bolsa de trabajo del programa educativo Odoo.",
             "url": "https://www.odoo.com/es_ES/jobs/bolsa-de-trabajo-programa-educativo-odoo-2422",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["Odoo", "Empleo", "Certificación"]
         },
         {
@@ -359,7 +367,7 @@
             "description": "Bolsa de trabajo en Softtek.",
             "url": "https://www.softtek.com/es-mx/haz-tu-carrera-en-softtek",
             "degree": ["ISC", "ICI", "IE"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["Softtek", "Empleo"]
         },
         {
@@ -368,7 +376,7 @@
             "description": "No es en sí una bolsa de trabajo, pero suelen poner las fechas y eventos de IBM Z day, la cual es una feria de empleo digital donde necesitas la insignia de IBM Z Xplore Concepts.",
             "url": "https://www.bemyapp.com/events/?&country=Online",
             "degree": ["ISC", "ICI"],
-            "location": "Online",
+            "location": ["Online"],
             "tags": ["IBM", "Certificación", "Evento", "Empleo"]
         },
         {
@@ -377,7 +385,7 @@
             "description": "Una de las famosas big tech de India (WITCH).",
             "url": "https://careers.cognizant.com/latam-es/comunidad-de-talentos/",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["Cognizant", "Empleo", "India"]
         },
         {
@@ -386,7 +394,7 @@
             "description": "Trabajos para estudiantes certificados en tecnologías de AWS.",
             "url": "https://www.awseducate.com/registration/s/learner-faqs?language=en_US#jobs",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["AWS", "Certificación", "Empleo", "Estudiantes"]
         },
         {
@@ -395,7 +403,7 @@
             "description": "Bolsa de trabajo exclusiva para estudiantes y egresados de la UAA.",
             "url": "https://esiima.uaa.mx/bolsadetrabajo/xwgbfebut.jsp",
             "degree": ["ISC", "ICI"],
-            "location": "Aguascalientes, México",
+            "location": ["Aguascalientes"],
             "tags": ["UAA", "Bolsa de trabajo", "Egresados"]
         },
         {
@@ -404,7 +412,7 @@
             "description": "Empresa internacional de consultoría y desarrollo de software, con fuerte presencia en Aguascalientes.",
             "url": "https://www.improving.com/es-MX/locations/aguascalientes/?region=mx",
             "degree": ["ISC", "ICI"],
-            "location": "Aguascalientes, México",
+            "location": ["Aguascalientes"],
             "tags": ["Consultoría", "Desarrollo de Software"]
         },
         {
@@ -413,7 +421,7 @@
             "description": "Empresa enfocada en desarrollo de software y soluciones móviles, con presencia en Aguascalientes y EE.UU.",
             "url": "https://www.krasamo.com/",
             "degree": ["ISC", "ICI", "IE"],
-            "location": "Aguascalientes, México",
+            "location": ["Aguascalientes"],
             "tags": ["Embebidos", "Móvil"]
         },
         {
@@ -422,7 +430,7 @@
             "description": "Consultora global con múltiples sedes en México, incluida Aguascalientes.",
             "url": "https://www.capgemini.com/mx-es/sobre-nosotros/locations/",
             "degree": ["ISC", "ICI"],
-            "location": "Aguascalientes, México",
+            "location": ["Aguascalientes"],
             "tags": ["Consultoría", "Global"]
         },
         {
@@ -431,7 +439,7 @@
             "description": "Empresa local de reclutamiento y outsourcing de talento en TI.",
             "url": "https://it-seekers.com/",
             "degree": ["ISC", "ICI"],
-            "location": "Aguascalientes, México",
+            "location": ["Aguascalientes"],
             "tags": ["Reclutamiento", "Outsourcing", "TI"]
         },
         {
@@ -440,7 +448,7 @@
             "description": "Empresa global de servicios de TI con oficinas en Aguascalientes.",
             "url": "https://www.techmahindra.com/",
             "degree": ["ISC", "ICI"],
-            "location": "Aguascalientes, México",
+            "location": ["Aguascalientes"],
             "tags": ["TI", "Servicios Globales"]
         },
         {
@@ -449,7 +457,7 @@
             "description": "Empresa local enfocada en desarrollo de software y transformación digital.",
             "url": "https://kiubix.mx/",
             "degree": ["ISC", "ICI"],
-            "location": "Aguascalientes, México",
+            "location": ["Aguascalientes"],
             "tags": ["Desarrollo de Software", "Transformación Digital"]
         },
         {
@@ -458,7 +466,7 @@
             "description": "Especializada en soluciones web y de software a la medida, ubicada en Aguascalientes.",
             "url": "https://maindsoft.net/",
             "degree": ["ISC", "ICI"],
-            "location": "Aguascalientes, México",
+            "location": ["Aguascalientes"],
             "tags": ["Desarrollo Web", "Software a la medida"]
         },
         {
@@ -467,7 +475,7 @@
             "description": "Empresa enfocada en tecnología industrial e ingeniería con sede en Aguascalientes.",
             "url": "https://www.gruponauko.com/#/home",
             "degree":["IE"],
-            "location": "Aguascalientes, México",
+            "location": ["Aguascalientes"],
             "tags": ["Tecnología Industrial", "Ingeniería"]
         },
         {
@@ -476,7 +484,7 @@
             "description": "Empresa local especializada en ciberseguridad.",
             "url": "https://tpx.security/",
             "degree": ["ISC", "ICI"],
-            "location": "Aguascalientes, México",
+            "location": ["Aguascalientes"],
             "tags": ["Ciberseguridad"]
         },
         {
@@ -485,7 +493,7 @@
             "description": "Startup tecnológica con enfoque en soluciones basadas en IA y ciencia de datos.",
             "url": "https://borealix.io/",
             "degree": ["ISC", "ICI"],
-            "location": "Aguascalientes, México",
+            "location": ["Aguascalientes"],
             "tags": ["IA", "Ciencia de Datos", "Startup"]
         },
         {
@@ -494,7 +502,7 @@
             "description": "Empresa de Digital Manufacturing Solutions especializada en la digitalización de procesos industriales, implementando soluciones de calidad, trazabilidad, ejecución en piso y control documental, integradas con hardware industrial. También ofrece servicios de seguridad de la información e implementación, capacitación y soporte de SIIGO/ASPEL.",
             "url": "https://gruposinco.com.mx/",
             "degree": ["ISC", "ICI"],
-            "location": "Aguascalientes, México",
+            "location": ["Aguascalientes"],
             "tags": ["Manufactura Digital", "Hardware Industrial", "Seguridad de la Información"]
         },
         {
@@ -503,7 +511,7 @@
             "description": "Consultora de TI de Aguascalientes especializada en implementación de ERP, desarrollo de software, infraestructura tecnológica, soporte, licenciamiento y consultoría para la transformación digital de empresas.",
             "url": "https://casadesoftware.com.mx",
             "degree": ["ISC", "ICI"],
-            "location": "Aguascalientes, México",
+            "location": ["Aguascalientes"],
             "tags": ["ERP", "Consultoría", "Transformación Digital"]
         },
         {
@@ -512,7 +520,7 @@
             "description": "Empresa mexicana de consultoría e integración de tecnologías de información. Su portafolio incluye ciberseguridad, infraestructura, nube, comunicaciones unificadas, desarrollo de aplicaciones, Microsoft Azure, virtualización y servicios administrados.",
             "url": "https://www.isavanzados.com.mx",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["Ciberseguridad", "Azure", "Infraestructura"]
         },
         {
@@ -521,7 +529,7 @@
             "description": "Empresa enfocada en digitalización de procesos empresariales mediante software administrativo, automatización, consultoría tecnológica e implementación de soluciones para la gestión empresarial.",
             "url": "https://avatuen.com",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["Digitalización", "Automatización", "Gestión Empresarial"]
         },
         {
@@ -530,7 +538,7 @@
             "description": "Consultora especializada en infraestructura tecnológica, redes, soporte técnico, venta de hardware, soluciones empresariales e integración de tecnologías para mejorar la competitividad de las organizaciones.",
             "url": "https://www.v2technoconsulting.com",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["Infraestructura", "Redes", "Hardware"]
         },
         {
@@ -539,7 +547,7 @@
             "description": "Empresa dedicada a infraestructura TI, soporte especializado, redes, servidores, servicios administrados, mantenimiento y consultoría informática para empresas.",
             "url": "https://areadetecnologia.com.mx",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["Infraestructura TI", "Redes", "Servidores"]
         },
         {
@@ -548,7 +556,7 @@
             "description": "Consultora especializada en infraestructura, computación en la nube, ciberseguridad, respaldo de información, continuidad de negocio y soporte empresarial.",
             "url": "https://sostic.com.mx",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["Nube", "Ciberseguridad", "Continuidad de Negocio"]
         },
         {
@@ -557,7 +565,7 @@
             "description": "Empresa dedicada a la integración de soluciones de TI, infraestructura tecnológica, comunicaciones, centros de datos, servicios administrados y consultoría.",
             "url": "https://siacom.mx",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["Infraestructura", "Centros de Datos", "Comunicaciones"]
         },
         {
@@ -566,7 +574,7 @@
             "description": "Empresa especializada en desarrollo de software empresarial, infraestructura tecnológica, soporte, redes y consultoría informática.",
             "url": "https://palominosistemas.com.mx",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["Desarrollo de Software", "Infraestructura", "Redes"]
         },
         {
@@ -575,7 +583,7 @@
             "description": "Empresa especializada en soluciones tecnológicas, infraestructura, videovigilancia, redes, seguridad electrónica, desarrollo de software, soporte y servicios para empresas.",
             "url": "https://teknium.mx",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["Videovigilancia", "Seguridad Electrónica", "Desarrollo de Software"]
         },
         {
@@ -584,7 +592,7 @@
             "description": "Empresa de desarrollo de software que ofrece sistemas empresariales, aplicaciones web y móviles, soluciones GIS, CRM, ERP y proyectos a la medida.",
             "url": "https://geomsoftware.com",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["GIS", "CRM", "ERP", "Desarrollo Web"]
         },
         {
@@ -593,7 +601,7 @@
             "description": "Empresa de desarrollo de software orientada a soluciones empresariales, automatización de procesos y sistemas personalizados.",
             "url": "https://nesis.com.mx",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["Automatización", "Software Empresarial"]
         },
         {
@@ -602,7 +610,7 @@
             "description": "Empresa de software especializada en plataformas para agencias de viajes, operadores turísticos y soluciones para la industria del turismo.",
             "url": "https://travelkey.com.mx",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["Turismo", "Plataformas de Software"]
         },
         {
@@ -611,7 +619,7 @@
             "description": "Empresa dedicada al desarrollo de software, aplicaciones empresariales, soluciones digitales e innovación tecnológica.",
             "url": "https://agmlat.com",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["Desarrollo de Software", "Innovación"]
         },
         {
@@ -620,7 +628,7 @@
             "description": "Empresa que ofrece desarrollo de software, soporte técnico, infraestructura, mantenimiento y servicios tecnológicos para organizaciones.",
             "url": "https://omegatecnosoluciones.com",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["Desarrollo de Software", "Infraestructura"]
         },
         {
@@ -629,7 +637,7 @@
             "description": "Consultora informática especializada en desarrollo de software, mantenimiento de sistemas, infraestructura tecnológica y soluciones empresariales.",
             "url": "https://clovernetmx.com",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["Consultoría", "Desarrollo de Software"]
         },
         {
@@ -638,7 +646,7 @@
             "description": "Consultora de tecnologías de información.",
             "url": "https://www.acaciaco.com.mx/",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["Consultoría", "TI"]
         },
         {
@@ -647,7 +655,7 @@
             "description": "Consultora especializada en asesoría, implementación de infraestructura tecnológica, soporte, seguridad informática y soluciones de TI.",
             "url": "https://mazasesoresti.com",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["Infraestructura", "Seguridad Informática"]
         },
         {
@@ -656,7 +664,7 @@
             "description": "Empresa de desarrollo de software, sistemas administrativos, consultoría tecnológica, soporte e implementación de soluciones empresariales.",
             "url": "https://tipromx.com",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["Desarrollo de Software", "Sistemas Administrativos"]
         },
         {
@@ -665,7 +673,7 @@
             "description": "Empresa de desarrollo de software a la medida, aplicaciones móviles, consultoría tecnológica e integración de soluciones empresariales.",
             "url": "https://sithec.com.mx",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["Software a la Medida", "Aplicaciones Móviles"]
         },
         {
@@ -674,7 +682,7 @@
             "description": "Empresa de ingeniería en infraestructura tecnológica especializada en ciberseguridad, redes, CCTV con IA, telefonía VoIP, servidores, hosting y asistencia técnica.",
             "url": "https://www.sieti.com.mx",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["Ciberseguridad", "CCTV", "IA", "VoIP"]
         },
         {
@@ -683,7 +691,7 @@
             "description": "Empresa de desarrollo web y móvil especializada en UX/UI, comercio electrónico, inteligencia artificial, GIS y soluciones digitales.",
             "url": "https://www.chaowebstudio.com.mx",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["Desarrollo Web", "UX/UI", "IA", "GIS"]
         },
         {
@@ -692,7 +700,7 @@
             "description": "Empresa dedicada a automatización industrial, sistemas SCADA, integración de procesos industriales, robótica e Industria 4.0.",
             "url": "https://www.grupo-inavan.com",
             "degree":["IE"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["Automatización Industrial", "SCADA", "Robótica", "Industria 4.0"]
         },
         {
@@ -701,7 +709,7 @@
             "description": "Empresa especializada en automatización industrial, integración tecnológica, IIoT, sistemas de control y digitalización de procesos productivos.",
             "url": "https://sindustry.mx",
             "degree":["IE"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["Automatización Industrial", "IIoT", "Sistemas de Control"]
         },
         {
@@ -710,7 +718,7 @@
             "description": "Consultora enfocada en blockchain, IoT, ciberseguridad, desarrollo de software e innovación tecnológica para empresas.",
             "url": "https://www.investel.mx",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["Blockchain", "IoT", "Ciberseguridad"]
         },
         {
@@ -719,7 +727,7 @@
             "description": "Empresa especializada en infraestructura tecnológica, cableado estructurado, redes, videovigilancia, centros de datos y servicios administrados.",
             "url": "https://www.sib-solutions.com.mx",
             "degree":["IE"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["Infraestructura", "Videovigilancia", "Centros de Datos"]
         },
         {
@@ -728,7 +736,7 @@
             "description": "Consultora de TI orientada a capacitación oficial, certificaciones, ciberseguridad, infraestructura, virtualización, bases de datos, nube y servicios profesionales multimarca.",
             "url": "https://blaumx.com",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["Capacitación", "Certificaciones", "Ciberseguridad", "Nube"]
         },
         {
@@ -737,7 +745,7 @@
             "description": "Empresa hidrocálida especializada en desarrollo de software, ciencia de datos, inteligencia artificial, realidad aumentada, comunicaciones y proyectos tecnológicos para empresas e instituciones.",
             "url": "https://prosolucionesti.com",
             "degree": ["ISC", "ICI"],
-            "location": "Aguascalientes, México",
+            "location": ["Aguascalientes"],
             "tags": ["Ciencia de Datos", "IA", "Realidad Aumentada"]
         },
         {
@@ -746,7 +754,7 @@
             "description": "Consultora de Aguascalientes especializada en software de gestión, infraestructura tecnológica, consultoría informática, licenciamiento, soporte y cumplimiento de software legal.",
             "url": "https://www.csags.com.mx",
             "degree": ["ISC", "ICI"],
-            "location": "Aguascalientes, México",
+            "location": ["Aguascalientes"],
             "tags": ["Software de Gestión", "Consultoría", "Licenciamiento"]
         },
         {
@@ -755,7 +763,7 @@
             "description": "Consultora enfocada en redes, infraestructura y soluciones de TI.",
             "url": "",
             "degree": ["ISC", "ICI"],
-            "location": "México",
+            "location": ["México"],
             "tags": ["Redes", "Infraestructura", "TI"]
         },
         {
@@ -764,7 +772,7 @@
             "description": "Plataforma para resolver problemas de programación; su sección de empleos incluye algunas empresas americanas interesadas en programadores con mucha habilidad.",
             "url": "https://open.kattis.com/jobs",
             "degree": ["ISC", "ICI"],
-            "location": "Estados Unidos",
+            "location": ["Estados Unidos"],
             "tags": ["Programación Competitiva", "Empleo"]
         },
         {
@@ -773,7 +781,7 @@
             "description": "Concursos de programación competitiva para obtener oportunidades de internships y empleos.",
             "url": "https://www.hackerearth.com/jobs/",
             "degree": ["ISC", "ICI"],
-            "location": "Estados Unidos",
+            "location": ["Estados Unidos"],
             "tags": ["Programación Competitiva", "Internships"]
         },
         {
@@ -782,7 +790,7 @@
             "description": "Listado de empresas que les interesan los participantes de competencias de programación competitiva (Telegram ha sido patrocinador de Codeforces).",
             "url": "https://codeforces.com/blog/entry/113837",
             "degree": ["ISC", "ICI"],
-            "location": "Estados Unidos",
+            "location": ["Estados Unidos"],
             "tags": ["Programación Competitiva", "Telegram"]
         },
         {
@@ -791,7 +799,7 @@
             "description": "Se especializan más en el área de redes.",
             "url": "https://www.netacad.com/careers/talent-bridge",
             "degree": ["ISC", "ICI"],
-            "location": "Estados Unidos",
+            "location": ["Estados Unidos"],
             "tags": ["Redes", "Cisco", "Empleo"]
         }
     ]

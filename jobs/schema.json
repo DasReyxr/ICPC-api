@@ -17,7 +17,13 @@
         "ICI"
       ]
     },
-    
+    "location": {
+    "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
     "url": {
       "type": "string",
       "format": "uri"
