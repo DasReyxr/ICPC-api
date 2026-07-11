@@ -1,0 +1,571 @@
+{
+    "jobs": [
+        {
+            "company": "Oracle",
+            "program": "Oracle Next Education ONE",
+            "description": "Al terminar el programa de certificación ONE, de Oracle, tendrás acceso a la plataforma donde diferentes empresas asociadas con Oracle envían convocatorias de trabajo y podrás acceder al Discord de alumni ONE donde también suele haber distintas ofertas laborales.",
+            "url": "https://www.oracle.com/mx/education/oracle-next-education/",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["Oracle", "ONE", "Certificación", "Empleo"]
+        },
+        {
+            "company": "ESCOM IPN",
+            "program": "Bolsa Escom",
+            "description": "Bolsa de trabajo de múltiples empresas en México a través de la página de Facebook ESCOM del IPN.",
+            "url": "https://www.facebook.com/bolsaescom/",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["Bolsa de trabajo", "IPN", "Facebook"]
+        },
+        {
+            "company": "Oracle",
+            "program": "Careers Oracle",
+            "description": "Bolsa de trabajo de Oracle, para conocimientos de la nube, java, etc.",
+            "url": "https://careers.oracle.com/jobs/#en/sites/jobsearch/requisitions?location=Mexico&locationId=300000000149103&locationLevel=country&mode=location",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["Oracle", "Java", "Nube", "Empleo"]
+        },
+        {
+            "company": "INROADS",
+            "program": "Vinculación con empresas",
+            "description": "Organización aliada con programas de Google.",
+            "url": "https://inroads.org.mx/vinculacion-con-empresas/",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["Google", "Vinculación", "Empleo"]
+        },
+        {
+            "company": "Huawei",
+            "program": "Bolsa de trabajo Huawei",
+            "description": "Huawei ha sido patrocinador de Codeforces por lo que puede que les interese las habilidades de programación competitiva.",
+            "url": "https://forum.huawei.com/enterprise/es/collection/667212857101664256",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["Huawei", "Programación Competitiva", "Empleo"]
+        },
+        {
+            "company": "Microsoft",
+            "program": "Empleos de Microsoft",
+            "description": "Múltiples empleos de Microsoft mayormente en la CDMX.",
+            "url": "https://careers.microsoft.com/v2/global/en/home.html",
+            "degree": ["ISC", "ICI"],
+            "location": "CDMX, México",
+            "tags": ["Microsoft", "Empleo", "CDMX"]
+        },
+        {
+            "company": "Google",
+            "program": "Empleos de Google",
+            "description": "Múltiples empleos de la empresa Google en CDMX y Guanajuato.",
+            "url": "https://www.google.com/about/careers/applications/jobs/results/?location=Mexico",
+            "degree": ["ISC", "ICI"],
+            "location": "CDMX, Guanajuato, México",
+            "tags": ["Google", "Empleo"]
+        },
+        {
+            "company": "Gobierno de México",
+            "program": "Portal Digital de Empleo",
+            "description": "Una amplia bolsa de trabajo con mapa incluido para ver a qué ciudades aplicar.",
+            "url": "https://www.empleo.gob.mx/PortalDigital",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["Gobierno", "Empleo", "Bolsa de trabajo"]
+        },
+        {
+            "company": "HackerRank",
+            "program": "HackerRank Jobs",
+            "description": "Plataforma de programación y validación de skills a través de certificados, ofrece una amplia bolsa de trabajo con empresas como McDonald's, PayPal, Dell, etc.",
+            "url": "https://www.hackerrank.com/apply?page=1&countries=Mexico",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["HackerRank", "Certificación", "Empleo"]
+        },
+        {
+            "company": "P&G",
+            "program": "P&G Careers",
+            "description": "Una gran bolsa de trabajo con múltiples ciudades de México para aplicar.",
+            "url": "https://www.pgcareers.com/mx/en/search-results?",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["P&G", "Empleo"]
+        },
+        {
+            "company": "Tata Consultancy Services (TCS)",
+            "program": "TCS iBegin",
+            "description": "Posiciones de empleo por la segunda empresa hindú más grande, Tata Consultancy Services (TCS).",
+            "url": "https://ibegin.tcs.com/iBegin/jobs/search",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["TCS", "Empleo", "India"]
+        },
+        {
+            "company": "Odoo",
+            "program": "Bolsa de trabajo programa educativo Odoo",
+            "description": "Bolsa de trabajo del programa educativo Odoo.",
+            "url": "https://www.odoo.com/es_ES/jobs/bolsa-de-trabajo-programa-educativo-odoo-2422",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["Odoo", "Empleo", "Certificación"]
+        },
+        {
+            "company": "Softtek",
+            "program": "Bolsa de trabajo en Softtek",
+            "description": "Bolsa de trabajo en Softtek.",
+            "url": "https://www.softtek.com/es-mx/haz-tu-carrera-en-softtek",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["Softtek", "Empleo"]
+        },
+        {
+            "company": "IBM",
+            "program": "bemyapp / IBM Z Day",
+            "description": "No es en sí una bolsa de trabajo, pero suelen poner las fechas y eventos de IBM Z day, la cual es una feria de empleo digital donde necesitas la insignia de IBM Z Xplore Concepts.",
+            "url": "https://www.bemyapp.com/events/?&country=Online",
+            "degree": ["ISC", "ICI"],
+            "location": "Online",
+            "tags": ["IBM", "Certificación", "Evento", "Empleo"]
+        },
+        {
+            "company": "Cognizant",
+            "program": "Comunidad de talentos Cognizant",
+            "description": "Una de las famosas big tech de India (WITCH).",
+            "url": "https://careers.cognizant.com/latam-es/comunidad-de-talentos/",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["Cognizant", "Empleo", "India"]
+        },
+        {
+            "company": "AWS",
+            "program": "AWS Educate Jobs",
+            "description": "Trabajos para estudiantes certificados en tecnologías de AWS.",
+            "url": "https://www.awseducate.com/registration/s/learner-faqs?language=en_US#jobs",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["AWS", "Certificación", "Empleo", "Estudiantes"]
+        },
+        {
+            "company": "Proyecto Nutria",
+            "program": "Proyecto Nutria ESCOM IPN",
+            "description": "Busca ayudar a personas que buscan trabajar en Grandes Empresas Tecnológicas como Microsoft, Facebook, Google, etc (FAANG). Suelen dar información importante y actualizada acerca de internships y oportunidades de empleo y guías de cómo hacer entrevistas de trabajo.",
+            "url": "https://proyectonutria.com/",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["FAANG", "Internships", "Entrevistas", "Discord"]
+        },
+        {
+            "company": "UAA",
+            "program": "Bolsa Universitaria de Trabajo de la UAA",
+            "description": "Bolsa de trabajo exclusiva para estudiantes y egresados de la UAA.",
+            "url": "https://esiima.uaa.mx/bolsadetrabajo/xwgbfebut.jsp",
+            "degree": ["ISC", "ICI"],
+            "location": "Aguascalientes, México",
+            "tags": ["UAA", "Bolsa de trabajo", "Egresados"]
+        },
+        {
+            "company": "Improving",
+            "program": "Improving Aguascalientes",
+            "description": "Empresa internacional de consultoría y desarrollo de software, con fuerte presencia en Aguascalientes.",
+            "url": "https://www.improving.com/es-MX/locations/aguascalientes/?region=mx",
+            "degree": ["ISC", "ICI"],
+            "location": "Aguascalientes, México",
+            "tags": ["Consultoría", "Desarrollo de Software"]
+        },
+        {
+            "company": "Softtek",
+            "program": "Softtek Aguascalientes",
+            "description": "Multinacional mexicana de soluciones TI, con oficinas en diversas ciudades de México, incluyendo Aguascalientes.",
+            "url": "https://www.softtek.com/es/",
+            "degree": ["ISC", "ICI"],
+            "location": "Aguascalientes, México",
+            "tags": ["Softtek", "TI"]
+        },
+        {
+            "company": "Krasamo",
+            "program": "Krasamo Aguascalientes",
+            "description": "Empresa enfocada en desarrollo de software y soluciones móviles, con presencia en Aguascalientes y EE.UU.",
+            "url": "https://www.krasamo.com/",
+            "degree": ["ISC", "ICI"],
+            "location": "Aguascalientes, México",
+            "tags": ["Desarrollo de Software", "Móvil"]
+        },
+        {
+            "company": "Capgemini",
+            "program": "Capgemini Aguascalientes",
+            "description": "Consultora global con múltiples sedes en México, incluida Aguascalientes.",
+            "url": "https://www.capgemini.com/mx-es/sobre-nosotros/locations/",
+            "degree": ["ISC", "ICI"],
+            "location": "Aguascalientes, México",
+            "tags": ["Consultoría", "Global"]
+        },
+        {
+            "company": "IT-Seekers",
+            "program": "IT-Seekers Aguascalientes",
+            "description": "Empresa local de reclutamiento y outsourcing de talento en TI.",
+            "url": "https://it-seekers.com/",
+            "degree": ["ISC", "ICI"],
+            "location": "Aguascalientes, México",
+            "tags": ["Reclutamiento", "Outsourcing", "TI"]
+        },
+        {
+            "company": "Tech Mahindra",
+            "program": "Tech Mahindra Aguascalientes",
+            "description": "Empresa global de servicios de TI con oficinas en Aguascalientes.",
+            "url": "https://www.techmahindra.com/",
+            "degree": ["ISC", "ICI"],
+            "location": "Aguascalientes, México",
+            "tags": ["TI", "Servicios Globales"]
+        },
+        {
+            "company": "Kiubix",
+            "program": "Kiubix Aguascalientes",
+            "description": "Empresa local enfocada en desarrollo de software y transformación digital.",
+            "url": "https://kiubix.mx/",
+            "degree": ["ISC", "ICI"],
+            "location": "Aguascalientes, México",
+            "tags": ["Desarrollo de Software", "Transformación Digital"]
+        },
+        {
+            "company": "Maindsoft",
+            "program": "Maindsoft Aguascalientes",
+            "description": "Especializada en soluciones web y de software a la medida, ubicada en Aguascalientes.",
+            "url": "https://maindsoft.net/",
+            "degree": ["ISC", "ICI"],
+            "location": "Aguascalientes, México",
+            "tags": ["Desarrollo Web", "Software a la medida"]
+        },
+        {
+            "company": "Grupo Nauko",
+            "program": "Grupo Nauko Aguascalientes",
+            "description": "Empresa enfocada en tecnología industrial e ingeniería con sede en Aguascalientes.",
+            "url": "https://www.gruponauko.com/#/home",
+            "degree":["IE"],
+            "location": "Aguascalientes, México",
+            "tags": ["Tecnología Industrial", "Ingeniería"]
+        },
+        {
+            "company": "TPX Security",
+            "program": "TPX Security Aguascalientes",
+            "description": "Empresa local especializada en ciberseguridad.",
+            "url": "https://tpx.security/",
+            "degree": ["ISC", "ICI"],
+            "location": "Aguascalientes, México",
+            "tags": ["Ciberseguridad"]
+        },
+        {
+            "company": "Borealix",
+            "program": "Borealix Aguascalientes",
+            "description": "Startup tecnológica con enfoque en soluciones basadas en IA y ciencia de datos.",
+            "url": "https://borealix.io/",
+            "degree": ["ISC", "ICI"],
+            "location": "Aguascalientes, México",
+            "tags": ["IA", "Ciencia de Datos", "Startup"]
+        },
+        {
+            "company": "Grupo Sinco",
+            "program": "Grupo Sinco Aguascalientes",
+            "description": "Empresa de Digital Manufacturing Solutions especializada en la digitalización de procesos industriales, implementando soluciones de calidad, trazabilidad, ejecución en piso y control documental, integradas con hardware industrial. También ofrece servicios de seguridad de la información e implementación, capacitación y soporte de SIIGO/ASPEL.",
+            "url": "https://gruposinco.com.mx/",
+            "degree": ["ISC", "ICI"],
+            "location": "Aguascalientes, México",
+            "tags": ["Manufactura Digital", "Hardware Industrial", "Seguridad de la Información"]
+        },
+        {
+            "company": "Casa de Software Aguascalientes",
+            "program": "Casa de Software",
+            "description": "Consultora de TI de Aguascalientes especializada en implementación de ERP, desarrollo de software, infraestructura tecnológica, soporte, licenciamiento y consultoría para la transformación digital de empresas.",
+            "url": "https://casadesoftware.com.mx",
+            "degree": ["ISC", "ICI"],
+            "location": "Aguascalientes, México",
+            "tags": ["ERP", "Consultoría", "Transformación Digital"]
+        },
+        {
+            "company": "ISA Avanzados",
+            "program": "ISA Avanzados",
+            "description": "Empresa mexicana de consultoría e integración de tecnologías de información. Su portafolio incluye ciberseguridad, infraestructura, nube, comunicaciones unificadas, desarrollo de aplicaciones, Microsoft Azure, virtualización y servicios administrados.",
+            "url": "https://www.isavanzados.com.mx",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["Ciberseguridad", "Azure", "Infraestructura"]
+        },
+        {
+            "company": "Avatuen Tecnología Administrativa",
+            "program": "Avatuen",
+            "description": "Empresa enfocada en digitalización de procesos empresariales mediante software administrativo, automatización, consultoría tecnológica e implementación de soluciones para la gestión empresarial.",
+            "url": "https://avatuen.com",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["Digitalización", "Automatización", "Gestión Empresarial"]
+        },
+        {
+            "company": "Techno Consulting",
+            "program": "V2 Techno Consulting",
+            "description": "Consultora especializada en infraestructura tecnológica, redes, soporte técnico, venta de hardware, soluciones empresariales e integración de tecnologías para mejorar la competitividad de las organizaciones.",
+            "url": "https://www.v2technoconsulting.com",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["Infraestructura", "Redes", "Hardware"]
+        },
+        {
+            "company": "Área de Tecnología",
+            "program": "Área de Tecnología",
+            "description": "Empresa dedicada a infraestructura TI, soporte especializado, redes, servidores, servicios administrados, mantenimiento y consultoría informática para empresas.",
+            "url": "https://areadetecnologia.com.mx",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["Infraestructura TI", "Redes", "Servidores"]
+        },
+        {
+            "company": "Sostic",
+            "program": "Sostic",
+            "description": "Consultora especializada en infraestructura, computación en la nube, ciberseguridad, respaldo de información, continuidad de negocio y soporte empresarial.",
+            "url": "https://sostic.com.mx",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["Nube", "Ciberseguridad", "Continuidad de Negocio"]
+        },
+        {
+            "company": "SIACOM Technosolutions México",
+            "program": "SIACOM",
+            "description": "Empresa dedicada a la integración de soluciones de TI, infraestructura tecnológica, comunicaciones, centros de datos, servicios administrados y consultoría.",
+            "url": "https://siacom.mx",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["Infraestructura", "Centros de Datos", "Comunicaciones"]
+        },
+        {
+            "company": "Palomino Sistemas y Tecnología",
+            "program": "Palomino Sistemas",
+            "description": "Empresa especializada en desarrollo de software empresarial, infraestructura tecnológica, soporte, redes y consultoría informática.",
+            "url": "https://palominosistemas.com.mx",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["Desarrollo de Software", "Infraestructura", "Redes"]
+        },
+        {
+            "company": "TEKNIUM",
+            "program": "Teknium",
+            "description": "Empresa especializada en soluciones tecnológicas, infraestructura, videovigilancia, redes, seguridad electrónica, desarrollo de software, soporte y servicios para empresas.",
+            "url": "https://teknium.mx",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["Videovigilancia", "Seguridad Electrónica", "Desarrollo de Software"]
+        },
+        {
+            "company": "GEOM Software",
+            "program": "GEOM Software",
+            "description": "Empresa de desarrollo de software que ofrece sistemas empresariales, aplicaciones web y móviles, soluciones GIS, CRM, ERP y proyectos a la medida.",
+            "url": "https://geomsoftware.com",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["GIS", "CRM", "ERP", "Desarrollo Web"]
+        },
+        {
+            "company": "NESis",
+            "program": "NESis",
+            "description": "Empresa de desarrollo de software orientada a soluciones empresariales, automatización de procesos y sistemas personalizados.",
+            "url": "https://nesis.com.mx",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["Automatización", "Software Empresarial"]
+        },
+        {
+            "company": "TravelKey",
+            "program": "TravelKey",
+            "description": "Empresa de software especializada en plataformas para agencias de viajes, operadores turísticos y soluciones para la industria del turismo.",
+            "url": "https://travelkey.com.mx",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["Turismo", "Plataformas de Software"]
+        },
+        {
+            "company": "AGMLAT",
+            "program": "AGMLAT",
+            "description": "Empresa dedicada al desarrollo de software, aplicaciones empresariales, soluciones digitales e innovación tecnológica.",
+            "url": "https://agmlat.com",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["Desarrollo de Software", "Innovación"]
+        },
+        {
+            "company": "OMEGA Tecno Soluciones",
+            "program": "OMEGA Tecno Soluciones",
+            "description": "Empresa que ofrece desarrollo de software, soporte técnico, infraestructura, mantenimiento y servicios tecnológicos para organizaciones.",
+            "url": "https://omegatecnosoluciones.com",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["Desarrollo de Software", "Infraestructura"]
+        },
+        {
+            "company": "ClovernetMX",
+            "program": "ClovernetMX",
+            "description": "Consultora informática especializada en desarrollo de software, mantenimiento de sistemas, infraestructura tecnológica y soluciones empresariales.",
+            "url": "https://clovernetmx.com",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["Consultoría", "Desarrollo de Software"]
+        },
+        {
+            "company": "ACACIA Consultoría en Informática y Cómputo",
+            "program": "ACACIA",
+            "description": "Consultora de tecnologías de información.",
+            "url": "https://www.acaciaco.com.mx/",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["Consultoría", "TI"]
+        },
+        {
+            "company": "Maz Asesores TI",
+            "program": "Maz Asesores TI",
+            "description": "Consultora especializada en asesoría, implementación de infraestructura tecnológica, soporte, seguridad informática y soluciones de TI.",
+            "url": "https://mazasesoresti.com",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["Infraestructura", "Seguridad Informática"]
+        },
+        {
+            "company": "TIPROMX",
+            "program": "TIPROMX",
+            "description": "Empresa de desarrollo de software, sistemas administrativos, consultoría tecnológica, soporte e implementación de soluciones empresariales.",
+            "url": "https://tipromx.com",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["Desarrollo de Software", "Sistemas Administrativos"]
+        },
+        {
+            "company": "Sithec Mex",
+            "program": "Sithec Mex",
+            "description": "Empresa de desarrollo de software a la medida, aplicaciones móviles, consultoría tecnológica e integración de soluciones empresariales.",
+            "url": "https://sithec.com.mx",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["Software a la Medida", "Aplicaciones Móviles"]
+        },
+        {
+            "company": "SIETI",
+            "program": "SIETI",
+            "description": "Empresa de ingeniería en infraestructura tecnológica especializada en ciberseguridad, redes, CCTV con IA, telefonía VoIP, servidores, hosting y asistencia técnica.",
+            "url": "https://www.sieti.com.mx",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["Ciberseguridad", "CCTV", "IA", "VoIP"]
+        },
+        {
+            "company": "Chao Web Studio",
+            "program": "Chao Web Studio",
+            "description": "Empresa de desarrollo web y móvil especializada en UX/UI, comercio electrónico, inteligencia artificial, GIS y soluciones digitales.",
+            "url": "https://www.chaowebstudio.com.mx",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["Desarrollo Web", "UX/UI", "IA", "GIS"]
+        },
+        {
+            "company": "Grupo InAvan",
+            "program": "Grupo InAvan",
+            "description": "Empresa dedicada a automatización industrial, sistemas SCADA, integración de procesos industriales, robótica e Industria 4.0.",
+            "url": "https://www.grupo-inavan.com",
+            "degree":["IE"],
+            "location": "México",
+            "tags": ["Automatización Industrial", "SCADA", "Robótica", "Industria 4.0"]
+        },
+        {
+            "company": "Sindustry",
+            "program": "Sindustry",
+            "description": "Empresa especializada en automatización industrial, integración tecnológica, IIoT, sistemas de control y digitalización de procesos productivos.",
+            "url": "https://sindustry.mx",
+            "degree":["IE"],
+            "location": "México",
+            "tags": ["Automatización Industrial", "IIoT", "Sistemas de Control"]
+        },
+        {
+            "company": "Investel",
+            "program": "Investel",
+            "description": "Consultora enfocada en blockchain, IoT, ciberseguridad, desarrollo de software e innovación tecnológica para empresas.",
+            "url": "https://www.investel.mx",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["Blockchain", "IoT", "Ciberseguridad"]
+        },
+        {
+            "company": "SIB Solutions",
+            "program": "SIB Solutions",
+            "description": "Empresa especializada en infraestructura tecnológica, cableado estructurado, redes, videovigilancia, centros de datos y servicios administrados.",
+            "url": "https://www.sib-solutions.com.mx",
+            "degree":["IE"],
+            "location": "México",
+            "tags": ["Infraestructura", "Videovigilancia", "Centros de Datos"]
+        },
+        {
+            "company": "Blau IT Hub",
+            "program": "Blau IT Hub",
+            "description": "Consultora de TI orientada a capacitación oficial, certificaciones, ciberseguridad, infraestructura, virtualización, bases de datos, nube y servicios profesionales multimarca.",
+            "url": "https://blaumx.com",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["Capacitación", "Certificaciones", "Ciberseguridad", "Nube"]
+        },
+        {
+            "company": "Prosoluciones TI",
+            "program": "Prosoluciones TI",
+            "description": "Empresa hidrocálida especializada en desarrollo de software, ciencia de datos, inteligencia artificial, realidad aumentada, comunicaciones y proyectos tecnológicos para empresas e instituciones.",
+            "url": "https://prosolucionesti.com",
+            "degree": ["ISC", "ICI"],
+            "location": "Aguascalientes, México",
+            "tags": ["Ciencia de Datos", "IA", "Realidad Aumentada"]
+        },
+        {
+            "company": "CSA Consultores",
+            "program": "CSA Consultores",
+            "description": "Consultora de Aguascalientes especializada en software de gestión, infraestructura tecnológica, consultoría informática, licenciamiento, soporte y cumplimiento de software legal.",
+            "url": "https://www.csags.com.mx",
+            "degree": ["ISC", "ICI"],
+            "location": "Aguascalientes, México",
+            "tags": ["Software de Gestión", "Consultoría", "Licenciamiento"]
+        },
+        {
+            "company": "INFINITO Asesoría en Tecnología de Información y Redes",
+            "program": "INFINITO",
+            "description": "Consultora enfocada en redes, infraestructura y soluciones de TI.",
+            "url": "",
+            "degree": ["ISC", "ICI"],
+            "location": "México",
+            "tags": ["Redes", "Infraestructura", "TI"]
+        },
+        {
+            "company": "Kattis",
+            "program": "Kattis Jobs",
+            "description": "Plataforma para resolver problemas de programación; su sección de empleos incluye algunas empresas americanas interesadas en programadores con mucha habilidad.",
+            "url": "https://open.kattis.com/jobs",
+            "degree": ["ISC", "ICI"],
+            "location": "Estados Unidos",
+            "tags": ["Programación Competitiva", "Empleo"]
+        },
+        {
+            "company": "HackerEarth",
+            "program": "HackerEarth Jobs",
+            "description": "Concursos de programación competitiva para obtener oportunidades de internships y empleos.",
+            "url": "https://www.hackerearth.com/jobs/",
+            "degree": ["ISC", "ICI"],
+            "location": "Estados Unidos",
+            "tags": ["Programación Competitiva", "Internships"]
+        },
+        {
+            "company": "Codeforces",
+            "program": "Listado de empresas Codeforces",
+            "description": "Listado de empresas que les interesan los participantes de competencias de programación competitiva (Telegram ha sido patrocinador de Codeforces).",
+            "url": "https://codeforces.com/blog/entry/113837",
+            "degree": ["ISC", "ICI"],
+            "location": "Estados Unidos",
+            "tags": ["Programación Competitiva", "Telegram"]
+        },
+        {
+            "company": "Cisco",
+            "program": "Cisco Talent Bridge",
+            "description": "Se especializan más en el área de redes.",
+            "url": "https://www.netacad.com/careers/talent-bridge",
+            "degree": ["ISC", "ICI"],
+            "location": "Estados Unidos",
+            "tags": ["Redes", "Cisco", "Empleo"]
+        }
+    ]
+}

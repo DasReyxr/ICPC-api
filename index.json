@@ -3,8 +3,9 @@
     "version": "1.0.0",
     "description": "API pública de datos recaudados por CPC-Gallos",
     "endpoints": {
-        "credentials": "https://cpc-gallos.github.io/api/credentials/data.json",
-        "communities": "https://cpc-gallos.github.io/api/communities/data.json"
+        "credentials": "https://github.com/DasReyxr/CPC-api/credentials/data.json",
+        "communities": "https://github.com/DasReyxr/CPC-api/communities/data.json",
+        "jobs":        "https://github.com/DasReyxr/CPC-api/jobs/data.json"
     },
     "lastUpdated": "2026-07-10"
 }

@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CPC-Gallos API — Tester</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --panel: #13181f;
+      --panel-border: #232b35;
+      --text: #d7dde5;
+      --text-dim: #7c8794;
+      --accent: #4fd1a5;
+      --accent-dim: #2a5f4b;
+      --accent2: #f87171;
+      --chip-bg: #1a222c;
+      --mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+      --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --radius: 8px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.4; }
+
+    /* ── Header ── */
+    header { padding: 22px 32px 16px; border-bottom: 1px solid var(--panel-border); }
+    header .eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 5px; }
+    header h1 { font-size: 20px; font-weight: 600; }
+    header p.sub { font-size: 12.5px; color: var(--text-dim); margin-top: 4px; }
+
+    /* ── Tabs ── */
+    .tabs { display: flex; gap: 8px; padding: 16px 28px 0; background: var(--panel); border-bottom: 1px solid var(--panel-border); }
+    .tab-btn { padding: 8px 20px; border: 1px solid var(--panel-border); border-bottom: none; border-radius: 6px 6px 0 0; background: var(--bg); color: var(--text-dim); cursor: pointer; font-size: 13px; font-family: var(--mono); font-weight: 600; letter-spacing: .04em; transition: all .15s; }
+    .tab-btn.active { background: var(--panel); color: var(--accent); border-color: var(--panel-border); border-bottom: 1px solid var(--panel); margin-bottom: -1px; }
+
+    /* ── Panels ── */
+    .panel { display: none; }
+    .panel.active { display: block; }
+
+    /* ── Filters ── */
+    .filters-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; padding: 16px 28px 12px; background: var(--panel); border-bottom: 1px solid var(--panel-border); align-items: start; }
+    .filter-group label { display: block; font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 6px; }
+    .filter-group input, .filter-group select { width: 100%; background: var(--chip-bg); border: 1px solid var(--panel-border); color: var(--text); padding: 8px 10px; border-radius: 6px; font-size: 12.5px; font-family: var(--sans); outline: none; }
+    .filter-group input:focus, .filter-group select:focus { border-color: var(--accent); }
+    .filter-group select:disabled { opacity: .5; cursor: not-allowed; }
+    .reset-btn { width: 100%; background: transparent; border: 1px solid var(--panel-border); color: var(--text-dim); padding: 8px 10px; border-radius: 6px; font-size: 11.5px; font-family: var(--mono); cursor: pointer; letter-spacing: .04em; align-self: end; }
+    .reset-btn:hover { border-color: var(--accent2); color: var(--accent2); }
+
+    /* ── Results bar ── */
+    main { padding: 18px 28px 40px; }
+    .results-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--panel-border); }
+    .results-count { font-family: var(--mono); font-size: 12.5px; color: var(--text-dim); }
+    .results-count strong { color: var(--accent); }
+    .toolbar { display: flex; gap: 10px; align-items: center; }
+    .btn-export { font-family: var(--mono); font-size: 11.5px; padding: 7px 14px; border-radius: 6px; border: 1px solid var(--accent-dim); background: var(--chip-bg); color: var(--accent); cursor: pointer; transition: background .15s; }
+    .btn-export:hover { background: var(--accent-dim); }
+    .dirty-info { font-family: var(--mono); font-size: 11px; color: var(--text-dim); }
+    .dirty-info strong { color: var(--accent); }
+
+    /* ── Grid & Cards ── */
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+    .card { position: relative; background: var(--panel); border: 1px solid var(--panel-border); border-radius: var(--radius); padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; transition: border-color .15s; }
+    .card:hover { border-color: var(--accent-dim); }
+    .card.editing { border-color: var(--accent); }
+    .card.dirty::before { content: "editado"; position: absolute; top: -8px; right: 12px; background: var(--accent); color: #05130e; font-family: var(--mono); font-size: 9px; font-weight: 700; letter-spacing: .05em; padding: 2px 7px; border-radius: 999px; }
+    .card .row-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+    .card h3 { font-size: 14px; font-weight: 600; line-height: 1.3; }
+    .card h3 a { color: var(--text); text-decoration: none; }
+    .card h3 a:hover { color: var(--accent); }
+    .card .meta { font-family: var(--mono); font-size: 11px; color: var(--text-dim); display: flex; flex-wrap: wrap; gap: 4px 12px; }
+    .card p.desc { font-size: 12px; color: var(--text-dim); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .chips { display: flex; flex-wrap: wrap; gap: 5px; }
+    .chip { font-family: var(--mono); font-size: 10px; padding: 3px 8px; border-radius: 999px; background: var(--chip-bg); border: 1px solid var(--panel-border); color: var(--text-dim); }
+    .chip.degree { color: #7dd3fc; border-color: #164e63; }
+    .chip.type { color: #34d399; border-color: #14532d; }
+    .chip.category { color: #7dd3fc; border-color: #164e63; }
+    .chip.tag { color: var(--accent); border-color: var(--accent-dim); }
+    .chip.group { color: #f59e0b; border-color: #78350f; }
+    .visit-link { font-family: var(--mono); font-size: 10.5px; color: var(--accent); text-decoration: none; }
+    .visit-link:hover { text-decoration: underline; }
+
+    /* ── Edit button ── */
+    .edit-btn { background: transparent; border: 1px solid var(--panel-border); color: var(--text-dim); font-family: var(--mono); font-size: 10px; padding: 3px 9px; border-radius: 999px; cursor: pointer; flex-shrink: 0; }
+    .edit-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── Edit form ── */
+    .edit-field { margin-bottom: 7px; }
+    .edit-field label { display: block; font-family: var(--mono); font-size: 10px; color: var(--text-dim); margin-bottom: 3px; text-transform: uppercase; letter-spacing: .04em; }
+    .edit-field input, .edit-field textarea, .edit-field select { width: 100%; background: var(--chip-bg); border: 1px solid var(--panel-border); color: var(--text); padding: 6px 8px; border-radius: 5px; font-size: 12px; font-family: var(--sans); outline: none; }
+    .edit-field input:focus, .edit-field textarea:focus { border-color: var(--accent); }
+    .edit-field textarea { resize: vertical; min-height: 55px; }
+    .edit-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .edit-actions { display: flex; gap: 8px; margin-top: 4px; }
+    .btn-save { flex: 1; font-family: var(--mono); font-size: 11px; padding: 7px; border-radius: 5px; cursor: pointer; background: var(--accent); color: #05130e; border: 1px solid var(--accent); font-weight: 700; }
+    .btn-cancel { flex: 1; font-family: var(--mono); font-size: 11px; padding: 7px; border-radius: 5px; cursor: pointer; background: transparent; color: var(--text-dim); border: 1px solid var(--panel-border); }
+    .btn-cancel:hover { color: var(--text); }
+
+    /* ── Loading / empty ── */
+    #loading { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 5rem; color: var(--text-dim); font-family: var(--mono); font-size: 13px; }
+    .spinner { width: 20px; height: 20px; border: 3px solid var(--panel-border); border-top-color: var(--accent); border-radius: 50%; animation: spin .6s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .empty-state { grid-column: 1/-1; text-align: center; padding: 50px; color: var(--text-dim); font-family: var(--mono); font-size: 12.5px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <p class="eyebrow">// CPC-Gallos · api tester</p>
+  <h1>CPC-Gallos API — Panel de prueba</h1>
+  <p class="sub">Filtra, edita y exporta los datasets de Jobs, Internships y Credentials.</p>
+</header>
+
+<div id="loading"><div class="spinner"></div> Cargando datos…</div>
+
+<div id="app" style="display:none">
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('jobs', this)">💼 Jobs</button>
+    <button class="tab-btn" onclick="switchTab('internships', this)">🎓 Internships</button>
+    <button class="tab-btn" onclick="switchTab('credentials', this)">🏅 Credentials</button>
+  </div>
+
+  <!-- ══════════ JOBS ══════════ -->
+  <div id="panel-jobs" class="panel active">
+    <div class="filters-bar">
+      <div class="filter-group">
+        <label>Buscar</label>
+        <input type="text" id="j-search" placeholder="empresa, programa, tag…" />
+      </div>
+      <div class="filter-group">
+        <label>Carrera</label>
+        <select id="j-degree">
+          <option value="">Todas</option>
+          <option>ISC</option><option>IE</option><option>ICI</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Ubicación</label>
+        <select id="j-location"><option value="">Todas</option></select>
+      </div>
+      <div class="filter-group" style="align-self:end">
+        <button class="reset-btn" id="j-reset">↺ limpiar filtros</button>
+      </div>
+    </div>
+    <main>
+      <div class="results-bar">
+        <span class="results-count"><strong id="j-count">0</strong> resultados</span>
+        <div class="toolbar">
+          <span class="dirty-info" id="j-dirty" style="display:none"><strong id="j-dirty-num">0</strong> cambios sin exportar</span>
+          <button class="btn-export" id="j-export">⬇ exportar JSON editado</button>
+        </div>
+      </div>
+      <div class="grid" id="j-grid"></div>
+    </main>
+  </div>
+
+  <!-- ══════════ INTERNSHIPS ══════════ -->
+  <div id="panel-internships" class="panel">
+    <div class="filters-bar">
+      <div class="filter-group">
+        <label>Buscar</label>
+        <input type="text" id="i-search" placeholder="empresa, programa, tag…" />
+      </div>
+      <div class="filter-group">
+        <label>Carrera</label>
+        <select id="i-degree"><option value="">Todas</option></select>
+      </div>
+      <div class="filter-group">
+        <label>Ubicación</label>
+        <select id="i-location"><option value="">Todas</option></select>
+      </div>
+      <div class="filter-group" style="align-self:end">
+        <button class="reset-btn" id="i-reset">↺ limpiar filtros</button>
+      </div>
+    </div>
+    <main>
+      <div class="results-bar">
+        <span class="results-count"><strong id="i-count">0</strong> resultados</span>
+        <div class="toolbar">
+          <span class="dirty-info" id="i-dirty" style="display:none"><strong id="i-dirty-num">0</strong> cambios sin exportar</span>
+          <button class="btn-export" id="i-export">⬇ exportar JSON editado</button>
+        </div>
+      </div>
+      <div class="grid" id="i-grid"></div>
+    </main>
+  </div>
+
+  <!-- ══════════ CREDENTIALS ══════════ -->
+  <div id="panel-credentials" class="panel">
+    <div class="filters-bar">
+      <div class="filter-group">
+        <label>Buscar</label>
+        <input type="text" id="c-search" placeholder="nombre, proveedor, tag…" />
+      </div>
+      <div class="filter-group">
+        <label>Tipo</label>
+        <select id="c-type"><option value="">Todos</option></select>
+      </div>
+      <div class="filter-group">
+        <label>Dominio</label>
+        <select id="c-domain"><option value="">Todos</option></select>
+      </div>
+      <div class="filter-group">
+        <label>Categoría</label>
+        <select id="c-category" disabled><option value="">Todas</option></select>
+      </div>
+      <div class="filter-group">
+        <label>Grupo proveedor</label>
+        <select id="c-group"><option value="">Todos</option></select>
+      </div>
+      <div class="filter-group">
+        <label>Proveedor</label>
+        <select id="c-provider" disabled><option value="">Todos</option></select>
+      </div>
+      <div class="filter-group" style="align-self:end">
+        <button class="reset-btn" id="c-reset">↺ limpiar filtros</button>
+      </div>
+    </div>
+    <main>
+      <div class="results-bar">
+        <span class="results-count"><strong id="c-count">0</strong> resultados</span>
+        <div class="toolbar">
+          <span class="dirty-info" id="c-dirty" style="display:none"><strong id="c-dirty-num">0</strong> cambios sin exportar</span>
+          <button class="btn-export" id="c-export">⬇ exportar JSON editado</button>
+        </div>
+      </div>
+      <div class="grid" id="c-grid"></div>
+    </main>
+  </div>
+
+</div><!-- /#app -->
+
+<script>
+
+// ── Helpers ────────────────────────────────────────────────────────────
+const unique = arr => [...new Set(arr.filter(Boolean))].sort((a,b) => a.localeCompare(b));
+
+function esc(v) {
+  return String(v ?? '').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function setOpts(sel, vals, current='') {
+  const prev = current || sel.value;
+  sel.innerHTML = '<option value="">Todos</option>' +
+    unique(vals).map(v => `<option${prev===v?' selected':''}>${esc(v)}</option>`).join('');
+}
+
+function downloadJSON(filename, data) {
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type:'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = Object.assign(document.createElement('a'), { href:url, download:filename });
+  document.body.appendChild(a); a.click(); a.remove();
+  URL.revokeObjectURL(url);
+}
+
+// ── localStorage persistence ────────────────────────────────────────────
+const STORE_J = 'cpc_jobs_edits_v1';
+const STORE_I = 'cpc_intern_edits_v1';
+const STORE_C = 'cpc_cred_edits_v1';
+
+function loadEdits(key) {
+  try { return JSON.parse(localStorage.getItem(key)) || {}; } catch { return {}; }
+}
+function saveEdits(key, edits) { localStorage.setItem(key, JSON.stringify(edits)); }
+
+function applyEdits(data, key) {
+  const edits = loadEdits(key);
+  return data.map(item => edits[item._key] ? { ...item, ...edits[item._key] } : item);
+}
+
+function persistEdit(key, itemKey, patch) {
+  const edits = loadEdits(key);
+  edits[itemKey] = { ...(edits[itemKey]||{}), ...patch };
+  saveEdits(key, edits);
+}
+
+// ── State ───────────────────────────────────────────────────────────────
+let JOBS = [];
+let INTERNSHIPS = [];
+let CREDS = [];
+let editingJob = null;
+let editingInternship = null;
+let editingCred = null;
+const dirtyJobs = new Set();
+const dirtyInternships = new Set();
+const dirtyCreds = new Set();
+
+// ── Tab switching ───────────────────────────────────────────────────────
+function switchTab(tab, btn) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('panel-' + tab).classList.add('active');
+}
+
+// ════════════════════════════════════════════════════════════════════════
+//  JOBS
+// ════════════════════════════════════════════════════════════════════════
+
+function populateJobFilters() {
+  setOpts(document.getElementById('j-location'), JOBS.map(j => j.location));
+}
+
+function filterJobs() {
+  const q   = document.getElementById('j-search').value.toLowerCase().trim();
+  const deg = document.getElementById('j-degree').value;
+  const loc = document.getElementById('j-location').value;
+  return JOBS.filter(j => {
+    const txt = `${j.company} ${j.program} ${j.description} ${(j.tags||[]).join(' ')}`.toLowerCase();
+    if (q   && !txt.includes(q)) return false;
+    if (deg && !(Array.isArray(j.degree) ? j.degree.includes(deg) : j.degree===deg)) return false;
+    if (loc && j.location !== loc) return false;
+    return true;
+  });
+}
+
+function renderJob(j) {
+  if (editingJob === j._key) return renderJobEdit(j);
+  const degs = (Array.isArray(j.degree)?j.degree:[j.degree]).filter(Boolean);
+  const tags = (j.tags||[]);
+  const dirty = dirtyJobs.has(j._key);
+  return `<div class="card${dirty?' dirty':''}" data-key="${esc(j._key)}">
+    <div class="row-top">
+      <h3>${j.url ? `<a href="${esc(j.url)}" target="_blank" rel="noopener">${esc(j.program)}</a>` : esc(j.program)}</h3>
+      <button class="edit-btn" data-action="j-edit" data-key="${esc(j._key)}">✎ editar</button>
+    </div>
+    <div class="meta"><span>🏢 ${esc(j.company)}</span>${j.location?`<span>📍 ${esc(j.location)}</span>`:''}</div>
+    ${j.description ? `<p class="desc">${esc(j.description)}</p>` : ''}
+    <div class="chips">
+      ${degs.map(d=>`<span class="chip degree">${esc(d)}</span>`).join('')}
+      ${tags.map(t=>`<span class="chip tag">${esc(t)}</span>`).join('')}
+    </div>
+    ${j.url ? `<a class="visit-link" href="${esc(j.url)}" target="_blank" rel="noopener">Ver oferta ↗</a>` : ''}
+  </div>`;
+}
+
+function renderJobEdit(j) {
+  const degs = (Array.isArray(j.degree)?j.degree:[j.degree]).filter(Boolean);
+  return `<div class="card editing" data-key="${esc(j._key)}">
+    <div class="edit-field"><label>Empresa</label>
+      <input data-field="company" value="${esc(j.company)}" /></div>
+    <div class="edit-field"><label>Programa</label>
+      <input data-field="program" value="${esc(j.program)}" /></div>
+    <div class="edit-field"><label>Descripción</label>
+      <textarea data-field="description">${esc(j.description)}</textarea></div>
+    <div class="edit-row-2">
+      <div class="edit-field"><label>URL</label>
+        <input data-field="url" value="${esc(j.url)}" /></div>
+      <div class="edit-field"><label>Ubicación</label>
+        <input data-field="location" value="${esc(j.location)}" /></div>
+    </div>
+    <div class="edit-row-2">
+      <div class="edit-field"><label>Carreras (coma)</label>
+        <input data-field="degree" value="${esc(degs.join(', '))}" /></div>
+      <div class="edit-field"><label>Tags (coma)</label>
+        <input data-field="tags" value="${esc((j.tags||[]).join(', '))}" /></div>
+    </div>
+    <div class="edit-actions">
+      <button class="btn-save" data-action="j-save" data-key="${esc(j._key)}">✓ guardar</button>
+      <button class="btn-cancel" data-action="j-cancel">cancelar</button>
+    </div>
+  </div>`;
+}
+
+function renderJobs() {
+  const results = filterJobs();
+  document.getElementById('j-count').textContent = results.length;
+  const grid = document.getElementById('j-grid');
+  grid.innerHTML = results.length
+    ? results.map(renderJob).join('')
+    : '<div class="empty-state">Sin resultados.</div>';
+  updateDirty('j');
+}
+
+function updateDirty(prefix) {
+  const set = prefix==='j' ? dirtyJobs : prefix==='i' ? dirtyInternships : dirtyCreds;
+  const wrap = document.getElementById(`${prefix}-dirty`);
+  const num  = document.getElementById(`${prefix}-dirty-num`);
+  if (set.size > 0) { wrap.style.display='inline'; num.textContent=set.size; }
+  else { wrap.style.display='none'; }
+}
+
+function handleJobClick(e) {
+  const btn = e.target.closest('[data-action]');
+  if (!btn) return;
+  const { action, key } = btn.dataset;
+  if (action === 'j-edit')   { editingJob = key; renderJobs(); return; }
+  if (action === 'j-cancel') { editingJob = null; renderJobs(); return; }
+  if (action === 'j-save') {
+    const card = btn.closest('.card');
+    const item = JOBS.find(j => j._key === key);
+    const patch = {};
+    card.querySelectorAll('[data-field]').forEach(el => {
+      const f = el.dataset.field;
+      let v = el.value;
+      if (f === 'degree' || f === 'tags')
+        v = v.split(',').map(s=>s.trim()).filter(Boolean);
+      patch[f] = v;
+    });
+    Object.assign(item, patch);
+    persistEdit(STORE_J, key, patch);
+    dirtyJobs.add(key);
+    editingJob = null;
+    populateJobFilters();
+    renderJobs();
+  }
+}
+
+// ════════════════════════════════════════════════════════════════════════
+//  INTERNSHIPS
+// ════════════════════════════════════════════════════════════════════════
+
+function populateInternFilters() {
+  const degs = [...new Set(
+    INTERNSHIPS.flatMap(x => Array.isArray(x.degree) ? x.degree : [x.degree]).filter(Boolean)
+  )].sort();
+  const sel = document.getElementById('i-degree');
+  sel.innerHTML = '<option value="">Todas</option>' +
+    degs.map(d => `<option>${esc(d)}</option>`).join('');
+  setOpts(document.getElementById('i-location'), INTERNSHIPS.map(x => x.location));
+}
+
+function filterInternships() {
+  const q   = document.getElementById('i-search').value.toLowerCase().trim();
+  const deg = document.getElementById('i-degree').value;
+  const loc = document.getElementById('i-location').value;
+  return INTERNSHIPS.filter(x => {
+    const txt = `${x.company} ${x.program} ${x.description||''} ${(x.tags||[]).join(' ')}`.toLowerCase();
+    if (q   && !txt.includes(q)) return false;
+    if (deg && !(Array.isArray(x.degree) ? x.degree.includes(deg) : x.degree === deg)) return false;
+    if (loc && x.location !== loc) return false;
+    return true;
+  });
+}
+
+function renderInternship(x) {
+  if (editingInternship === x._key) return renderInternshipEdit(x);
+  const degs  = (Array.isArray(x.degree) ? x.degree : [x.degree]).filter(Boolean);
+  const tags  = (x.tags || []);
+  const dirty = dirtyInternships.has(x._key);
+  return `<div class="card${dirty ? ' dirty' : ''}" data-key="${esc(x._key)}">
+    <div class="row-top">
+      <h3>${x.url ? `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.program)}</a>` : esc(x.program)}</h3>
+      <button class="edit-btn" data-action="i-edit" data-key="${esc(x._key)}">✎ editar</button>
+    </div>
+    <div class="meta"><span>🏢 ${esc(x.company)}</span>${x.location ? `<span>📍 ${esc(x.location)}</span>` : ''}</div>
+    ${x.description ? `<p class="desc">${esc(x.description)}</p>` : ''}
+    <div class="chips">
+      ${degs.map(d => `<span class="chip degree">${esc(d)}</span>`).join('')}
+      ${tags.map(t => `<span class="chip tag">${esc(t)}</span>`).join('')}
+    </div>
+    ${x.url ? `<a class="visit-link" href="${esc(x.url)}" target="_blank" rel="noopener">Ver programa ↗</a>` : ''}
+  </div>`;
+}
+
+function renderInternshipEdit(x) {
+  const degs = (Array.isArray(x.degree) ? x.degree : [x.degree]).filter(Boolean);
+  return `<div class="card editing" data-key="${esc(x._key)}">
+    <div class="edit-field"><label>Empresa</label>
+      <input data-field="company" value="${esc(x.company)}" /></div>
+    <div class="edit-field"><label>Programa</label>
+      <input data-field="program" value="${esc(x.program)}" /></div>
+    <div class="edit-field"><label>Descripción</label>
+      <textarea data-field="description">${esc(x.description)}</textarea></div>
+    <div class="edit-row-2">
+      <div class="edit-field"><label>URL</label>
+        <input data-field="url" value="${esc(x.url)}" /></div>
+      <div class="edit-field"><label>Ubicación</label>
+        <input data-field="location" value="${esc(x.location)}" /></div>
+    </div>
+    <div class="edit-row-2">
+      <div class="edit-field"><label>Carreras (coma)</label>
+        <input data-field="degree" value="${esc(degs.join(', '))}" /></div>
+      <div class="edit-field"><label>Tags (coma)</label>
+        <input data-field="tags" value="${esc((x.tags || []).join(', '))}" /></div>
+    </div>
+    <div class="edit-actions">
+      <button class="btn-save" data-action="i-save" data-key="${esc(x._key)}">✓ guardar</button>
+      <button class="btn-cancel" data-action="i-cancel">cancelar</button>
+    </div>
+  </div>`;
+}
+
+function renderInternships() {
+  const results = filterInternships();
+  document.getElementById('i-count').textContent = results.length;
+  const grid = document.getElementById('i-grid');
+  grid.innerHTML = results.length
+    ? results.map(renderInternship).join('')
+    : '<div class="empty-state">Sin resultados.</div>';
+  updateDirty('i');
+}
+
+function handleInternshipClick(e) {
+  const btn = e.target.closest('[data-action]');
+  if (!btn) return;
+  const { action, key } = btn.dataset;
+  if (action === 'i-edit')   { editingInternship = key; renderInternships(); return; }
+  if (action === 'i-cancel') { editingInternship = null; renderInternships(); return; }
+  if (action === 'i-save') {
+    const card = btn.closest('.card');
+    const item = INTERNSHIPS.find(x => x._key === key);
+    const patch = {};
+    card.querySelectorAll('[data-field]').forEach(el => {
+      const f = el.dataset.field;
+      let v = el.value;
+      if (f === 'degree' || f === 'tags')
+        v = v.split(',').map(s => s.trim()).filter(Boolean);
+      patch[f] = v;
+    });
+    Object.assign(item, patch);
+    persistEdit(STORE_I, key, patch);
+    dirtyInternships.add(key);
+    editingInternship = null;
+    populateInternFilters();
+    renderInternships();
+  }
+}
+
+// ════════════════════════════════════════════════════════════════════════
+//  CREDENTIALS
+// ════════════════════════════════════════════════════════════════════════
+
+function refreshCredFilters() {
+  const dom  = document.getElementById('c-domain').value;
+  const grp  = document.getElementById('c-group').value;
+  const curCat = document.getElementById('c-category').value;
+  const curPro = document.getElementById('c-provider').value;
+
+  setOpts(document.getElementById('c-type'),     CREDS.map(c=>c.type));
+  setOpts(document.getElementById('c-domain'),   CREDS.map(c=>c.domain), dom);
+  setOpts(document.getElementById('c-group'),    CREDS.map(c=>c.providerGroup), grp);
+
+  const catPool = CREDS.filter(c=>!dom||c.domain===dom).map(c=>c.category);
+  setOpts(document.getElementById('c-category'), catPool, curCat);
+  document.getElementById('c-category').disabled = !dom;
+
+  const proPool = CREDS.filter(c=>!grp||c.providerGroup===grp).map(c=>c.provider);
+  setOpts(document.getElementById('c-provider'), proPool, curPro);
+  document.getElementById('c-provider').disabled = !grp;
+}
+
+function filterCreds() {
+  const q    = document.getElementById('c-search').value.toLowerCase().trim();
+  const type = document.getElementById('c-type').value;
+  const dom  = document.getElementById('c-domain').value;
+  const cat  = document.getElementById('c-category').value;
+  const grp  = document.getElementById('c-group').value;
+  const prov = document.getElementById('c-provider').value;
+  return CREDS.filter(c => {
+    const txt = `${c.name} ${c.provider} ${c.description||''} ${(c.tags||[]).join(' ')}`.toLowerCase();
+    if (q    && !txt.includes(q))      return false;
+    if (type && c.type !== type)        return false;
+    if (dom  && c.domain !== dom)       return false;
+    if (cat  && c.category !== cat)     return false;
+    if (grp  && c.providerGroup !== grp) return false;
+    if (prov && c.provider !== prov)    return false;
+    return true;
+  });
+}
+
+function renderCred(c) {
+  if (editingCred === c._key) return renderCredEdit(c);
+  const tags = (c.tags||[]);
+  const dirty = dirtyCreds.has(c._key);
+  return `<div class="card${dirty?' dirty':''}" data-key="${esc(c._key)}">
+    <div class="row-top">
+      <h3>${c.url ? `<a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.name)}</a>` : esc(c.name)}</h3>
+      <button class="edit-btn" data-action="c-edit" data-key="${esc(c._key)}">✎ editar</button>
+    </div>
+    <div class="meta"><span>${esc(c.provider)}</span><span>${esc(c.providerGroup||'')}</span></div>
+    ${c.description ? `<p class="desc">${esc(c.description)}</p>` : ''}
+    <div class="chips">
+      <span class="chip type">${esc(c.type)}</span>
+      <span class="chip category">${esc(c.category)}</span>
+      ${tags.map(t=>`<span class="chip tag">${esc(t)}</span>`).join('')}
+    </div>
+    ${c.url ? `<a class="visit-link" href="${esc(c.url)}" target="_blank" rel="noopener">Ver credencial ↗</a>` : ''}
+  </div>`;
+}
+
+function renderCredEdit(c) {
+  return `<div class="card editing" data-key="${esc(c._key)}">
+    <div class="edit-field"><label>Nombre</label>
+      <input data-field="name" value="${esc(c.name)}" /></div>
+    <div class="edit-row-2">
+      <div class="edit-field"><label>Proveedor</label>
+        <input data-field="provider" value="${esc(c.provider)}" /></div>
+      <div class="edit-field"><label>Grupo proveedor</label>
+        <input data-field="providerGroup" value="${esc(c.providerGroup)}" /></div>
+    </div>
+    <div class="edit-field"><label>Descripción</label>
+      <textarea data-field="description">${esc(c.description)}</textarea></div>
+    <div class="edit-row-2">
+      <div class="edit-field"><label>Dominio</label>
+        <input data-field="domain" value="${esc(c.domain)}" /></div>
+      <div class="edit-field"><label>Categoría</label>
+        <input data-field="category" value="${esc(c.category)}" /></div>
+    </div>
+    <div class="edit-row-2">
+      <div class="edit-field"><label>Tipo</label>
+        <input data-field="type" value="${esc(c.type)}" /></div>
+      <div class="edit-field"><label>Tags (coma)</label>
+        <input data-field="tags" value="${esc((c.tags||[]).join(', '))}" /></div>
+    </div>
+    <div class="edit-row-2">
+      <div class="edit-field"><label>URL</label>
+        <input data-field="url" value="${esc(c.url)}" /></div>
+      <div class="edit-field"><label>ID</label>
+        <input data-field="id" value="${esc(c.id)}" /></div>
+    </div>
+    <div class="edit-actions">
+      <button class="btn-save" data-action="c-save" data-key="${esc(c._key)}">✓ guardar</button>
+      <button class="btn-cancel" data-action="c-cancel">cancelar</button>
+    </div>
+  </div>`;
+}
+
+function renderCreds() {
+  const results = filterCreds();
+  document.getElementById('c-count').textContent = results.length;
+  const grid = document.getElementById('c-grid');
+  grid.innerHTML = results.length
+    ? results.map(renderCred).join('')
+    : '<div class="empty-state">Sin resultados.</div>';
+  updateDirty('c');
+}
+
+function handleCredClick(e) {
+  const btn = e.target.closest('[data-action]');
+  if (!btn) return;
+  const { action, key } = btn.dataset;
+  if (action === 'c-edit')   { editingCred = key; renderCreds(); return; }
+  if (action === 'c-cancel') { editingCred = null; renderCreds(); return; }
+  if (action === 'c-save') {
+    const card = btn.closest('.card');
+    const item = CREDS.find(c => c._key === key);
+    const patch = {};
+    card.querySelectorAll('[data-field]').forEach(el => {
+      const f = el.dataset.field;
+      let v = el.value;
+      if (f === 'tags') v = v.split(',').map(s=>s.trim()).filter(Boolean);
+      patch[f] = v;
+    });
+    Object.assign(item, patch);
+    persistEdit(STORE_C, key, patch);
+    dirtyCreds.add(key);
+    editingCred = null;
+    refreshCredFilters();
+    renderCreds();
+  }
+}
+
+// ════════════════════════════════════════════════════════════════════════
+//  Bootstrap
+// ════════════════════════════════════════════════════════════════════════
+
+async function loadData() {
+  let jobsRaw, internRaw, credsRaw;
+  try {
+    [jobsRaw, internRaw, credsRaw] = await Promise.all([
+      fetch('jobs/data.json').then(r=>r.json()),
+      fetch('internship/data.json').then(r=>r.json()),
+      fetch('credentials/data.json').then(r=>r.json())
+    ]);
+  } catch {
+    [jobsRaw, internRaw, credsRaw] = await Promise.all([
+      fetch('https://raw.githubusercontent.com/DasReyxr/CPC-api/main/jobs/data.json').then(r=>r.json()),
+      fetch('https://raw.githubusercontent.com/DasReyxr/CPC-api/main/internship/data.json').then(r=>r.json()),
+      fetch('https://raw.githubusercontent.com/DasReyxr/CPC-api/main/credentials/data.json').then(r=>r.json())
+    ]);
+  }
+
+  JOBS        = (jobsRaw.jobs||[]).map((j,i) => ({ ...j, _key: `j-${i}` }));
+  INTERNSHIPS = (internRaw.internships||[]).map((x,i) => ({ ...x, _key: `i-${i}` }));
+  CREDS       = (credsRaw.credentials||[]).map((c,i) => ({ ...c, _key: `c-${i}` }));
+
+  // Apply stored edits
+  const je = loadEdits(STORE_J);
+  const ie = loadEdits(STORE_I);
+  const ce = loadEdits(STORE_C);
+  JOBS.forEach(j        => { if (je[j._key]) { Object.assign(j, je[j._key]); dirtyJobs.add(j._key); } });
+  INTERNSHIPS.forEach(x => { if (ie[x._key]) { Object.assign(x, ie[x._key]); dirtyInternships.add(x._key); } });
+  CREDS.forEach(c       => { if (ce[c._key]) { Object.assign(c, ce[c._key]); dirtyCreds.add(c._key); } });
+
+  populateJobFilters();
+  populateInternFilters();
+  refreshCredFilters();
+
+  // Wire jobs
+  ['j-search','j-degree','j-location'].forEach(id =>
+    document.getElementById(id).addEventListener('input', renderJobs));
+  document.getElementById('j-reset').addEventListener('click', () => {
+    document.getElementById('j-search').value='';
+    ['j-degree','j-location'].forEach(id => document.getElementById(id).value='');
+    renderJobs();
+  });
+  document.getElementById('j-grid').addEventListener('click', handleJobClick);
+  document.getElementById('j-export').addEventListener('click', () =>
+    downloadJSON('jobs.edited.json', { jobs: JOBS.map(({_key,...r})=>r) }));
+
+  // Wire internships
+  ['i-search','i-degree','i-location'].forEach(id =>
+    document.getElementById(id).addEventListener('input', renderInternships));
+  document.getElementById('i-reset').addEventListener('click', () => {
+    document.getElementById('i-search').value='';
+    ['i-degree','i-location'].forEach(id => document.getElementById(id).value='');
+    renderInternships();
+  });
+  document.getElementById('i-grid').addEventListener('click', handleInternshipClick);
+  document.getElementById('i-export').addEventListener('click', () =>
+    downloadJSON('internship.edited.json', { internships: INTERNSHIPS.map(({_key,...r})=>r) }));
+
+  // Wire credentials
+  ['c-search','c-type'].forEach(id =>
+    document.getElementById(id).addEventListener('input', renderCreds));
+  ['c-domain','c-category','c-group','c-provider'].forEach(id =>
+    document.getElementById(id).addEventListener('change', () => { refreshCredFilters(); renderCreds(); }));
+  document.getElementById('c-domain').addEventListener('change', () => {
+    if (!document.getElementById('c-domain').value) document.getElementById('c-category').value='';
+  });
+  document.getElementById('c-group').addEventListener('change', () => {
+    if (!document.getElementById('c-group').value) document.getElementById('c-provider').value='';
+  });
+  document.getElementById('c-reset').addEventListener('click', () => {
+    document.getElementById('c-search').value='';
+    ['c-type','c-domain','c-category','c-group','c-provider'].forEach(id =>
+      document.getElementById(id).value='');
+    refreshCredFilters();
+    renderCreds();
+  });
+  document.getElementById('c-grid').addEventListener('click', handleCredClick);
+  document.getElementById('c-export').addEventListener('click', () =>
+    downloadJSON('credentials.edited.json', { credentials: CREDS.map(({_key,...r})=>r) }));
+
+  renderJobs();
+  renderInternships();
+  renderCreds();
+
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('app').style.display = 'block';
+}
+
+loadData().catch(err => {
+  document.getElementById('loading').textContent = 'Error cargando datos: ' + err.message;
+});
+</script>
+</body>
+</html>

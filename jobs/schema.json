@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Job",
+  "type": "object",
+  "properties": {
+    "company": {
+      "type": "string"
+    },
+    "program": {
+      "type": "string"
+    },
+    "degree": {
+      "type": "string",
+      "enum": [
+        "ISC",
+        "IE",
+        "ICI"
+      ]
+    },
+    
+    "url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "description": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    }
+  },
+
+  "additionalProperties": false
+}
