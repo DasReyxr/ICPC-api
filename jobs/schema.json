@@ -845,5 +845,21 @@
             "location": ["Estados Unidos"],
             "tags": ["Redes", "Cisco", "Empleo"]
         }
-    ]
+        ,{
+            "company": "Aumovio",
+            "program": "Enterprise",
+            "description": "Empresa global de tecnología automotriz y de movilidad, enfocada en software, conducción autónoma, electrónica y seguridad, que surgió como una escisión independiente del antiguo sector automotriz del Grupo Continental.",
+            "url": "https://jobs.aumovio.com/es/jobs/#/",
+            "degree": ["IE"],
+            "location": ["Aguascalientes", "Guadalajara"],
+            "tags": ["Mantenimiento", "Manufactura"]}
+        ,{
+            "company": "Luxoft",
+            "program": "Enterprise",
+            "description": "empresa global de consultoría y desarrollo de software. Se dedica a crear soluciones tecnológicas a la medida para grandes empresas internacionales. Sus áreas de trabajo incluyen la industria automotriz (autos autónomos), finanzas (banca digital) y salud. Actualmente, Luxoft es una subsidiaria de la empresa tecnológica DXC Technology..",
+            "url": "https://career.luxoft.com/jobs?keyword=&country[]=Mexico",
+            "degree": ["ISC","ICI"],
+            "location": ["Remote", "Guadalajara", "CDMX"],
+            "tags": ["Power BI Dev", "DevOps", "Clouds"]}
+      ]
 }
