@@ -1,36 +1,130 @@
-# api
+# Jaleaki
 
-API REST (GET) utilizando GitHub Pages para proveer archivos JSON a nuestras aplicaciones y página web.
+Jaleaki es un directorio colaborativo de oportunidades laborales, programas de prácticas profesionales (internships) y certificaciones, orientado principalmente a estudiantes y recién egresados de áreas de ingeniería y tecnología.
 
-## Convenciones
+El proyecto utiliza archivos JSON como fuente de datos y una interfaz web estática para consultar, filtrar, editar y exportar información sin necesidad de un servidor.
 
-Para mantener un estándar profesional:
+## Características
 
-- **Estructura de la API (Claves):** Las propiedades de los archivos JSON están en **inglés** (ej. `name`, `description`, `provider`).
-- **Contenido y Documentación:** El valor de los datos como por ejemplo el de `description` y toda la documentación de este repositorio están en **español**.
+- Buscar empleos, internships y certificaciones.
+- Filtrar por carrera, ubicación, proveedor, dominio y categoría.
+- Editar registros directamente desde el navegador.
+- Guardar cambios temporalmente mediante LocalStorage.
+- Exportar los cambios como archivos JSON.
+- Compatible con GitHub Pages.
+- No requiere backend.
 
-## Endpoints Disponibles
+## Estructura del proyecto
 
-Los datos se sirven estáticamente como archivos JSON:
-
-- `https://cpc-gallos.github.io/api/index.json` - **Directorio principal** con la información de la API y rutas a todos los endpoints disponibles.
-- `https://cpc-gallos.github.io/api/credentials/data.json` - Datos de certificados.
-- `https://cpc-gallos.github.io/api/communities/data.json` - Datos de comunidades de programación competitiva.
-
-## Ejemplo de uso (fetch)
-
-Tener los datos en la API permite que cualquiera los consuma fácilmente. Puedes obtener los datos desde cualquier aplicación usando la API `fetch()` nativa de JavaScript:
-
-```javascript
-fetch('https://cpc-gallos.github.io/api/credentials/data.json')
-  .then(response => response.json())
-  .then(data => {
-    console.log('Datos de certificados:', data);
-    // Aquí puedes procesar los datos para mostrarlos en el blog o aplicación
-  })
-  .catch(error => console.error('Error al obtener los datos:', error));
+```
+.
+├── credentials/
+│   └── data.json
+├── internship/
+│   └── data.json
+├── jobs/
+│   └── data.json
+├── index.html
+├── README.md
+└── CONTRIBUTING.md
 ```
 
-## Contribuir
+## Formato de los datos
 
-Cualquier colaborador puede contribuir abriendo un PR para agregar o corregir información (clubes, certificados, comunidades). Para más detalles sobre cómo hacerlo, por favor revisa nuestra [guía de contribución](CONTRIBUTING.md).
+### Jobs
+
+```json
+{
+    "company": "Google",
+    "program": "Careers",
+    "description": "...",
+    "location": "Remoto",
+    "degree": ["ISC", "IE"],
+    "tags": ["Software"],
+    "url": "https://..."
+}
+```
+
+### Internships
+
+```json
+{
+    "company": "Microsoft",
+    "program": "Explore",
+    "description": "...",
+    "location": "México",
+    "degree": ["ISC"],
+    "tags": ["Internship"],
+    "url": "https://..."
+}
+```
+
+### Credentials
+
+```json
+{
+    "name": "AWS Certified Cloud Practitioner",
+    "provider": "AWS",
+    "providerGroup": "Cloud",
+    "domain": "Cloud Computing",
+    "category": "Foundations",
+    "type": "Certification",
+    "description": "...",
+    "tags": ["Cloud"],
+    "url": "https://..."
+}
+```
+
+## Ejecutar el proyecto
+
+Clona el repositorio:
+
+```bash
+git clone https://github.com/DasReyxr/CPC-api.git
+cd CPC-api
+```
+
+Inicia cualquier servidor estático.
+
+Con Python:
+
+```bash
+python -m http.server
+```
+
+Con Node.js:
+
+```bash
+npx serve
+```
+
+Después abre:
+
+```
+http://localhost:8000
+```
+
+## Edición de datos
+
+La interfaz permite editar la información desde el navegador.
+
+Los cambios:
+
+- Se almacenan únicamente en LocalStorage.
+- No modifican automáticamente los archivos del repositorio.
+- Pueden exportarse como archivos JSON para posteriormente subirlos mediante un Pull Request.
+
+## Objetivo
+
+Jaleaki busca mantener un directorio abierto y actualizado de:
+
+- Bolsas de trabajo.
+- Páginas oficiales de empresas.
+- Programas de internships.
+- Certificaciones profesionales.
+
+Cualquier persona puede contribuir agregando nuevas oportunidades o corrigiendo información existente.
+
+## Licencia
+
+Este proyecto se distribuye bajo la licencia MIT.
