@@ -1,6 +1,18 @@
 {
     "internships": [
         {
+            "company": "Intel",
+            "program": "Intel Jobs",
+            "description": "Bolsa de trabajo de intel, tiene vacantes en guadalajara (Tengo entendido que la mayoria son presencial).",
+            "url": "https://intel.wd1.myworkdayjobs.com/External",
+            "degree": ["IE"],
+            "location": "Guadalajara",
+            "tags": ["Intel", "Diseño Digital", "FPGA"]
+        
+        },
+
+
+        {
             "company": "TECNM Aguascalientes",
             "program": "ITA-CLIA",
             "description": "Cluster industrial de Aguascalientes por parte del TECNM, con un apartado de empresas que dan los contactos para aplicar a pasantías o prácticas profesionales en varias empresas de interés en el estado, como Softtek, Nissan, etc.",

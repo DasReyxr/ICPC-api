@@ -1,6 +1,184 @@
 {
     "jobs": [
         {
+            "company": "Siemens",
+            "program": "Siemens Jobs",
+            "description": "Bolsa de trabajo de Siemens",
+            "url": "https://www.linkedin.com/company/siemens/jobs/",
+            "degree": ["IE"],
+            "location": "Queretaro",
+            "tags": ["Manufactura"]
+        
+        },
+
+
+        {
+            "company": "LER TechForce",
+            "program": "LER TechForce Jobs",
+            "description": "Bolsa de trabajo de LER TechForce",
+            "url": "https://www.linkedin.com/company/ler-techforce/jobs/",
+            "degree": ["IE"],
+            "location": "Queretaro",
+            "tags": ["Embebidos"]
+        
+        },
+
+
+        {
+            "company": "Valeo",
+            "program": "Valeo Jobs",
+            "description": "Bolsa de trabajo de Valeo",
+            "url": "https://www.linkedin.com/company/valeo/jobs/",
+            "degree": ["IE"],
+            "location": "Queretaro",
+            "tags": ["Manufactura"]
+        
+        },
+
+{
+            "company": "Global logic",
+            "program": "Global logic Jobs",
+            "description": "Bolsa de trabajo de Global logic",
+            "url": "https://www.linkedin.com/company/globallogic/jobs/",
+            "degree": ["IE"],
+            "location": "Guadalajara",
+            "tags": ["Embebidos"]
+        
+        },
+
+        {
+            "company": "Forvia Hella",
+            "program": "Forvia Hella Jobs",
+            "description": "Bolsa de trabajo de Forvia Hella",
+            "url": "https://www.linkedin.com/company/forviahella/jobs/",
+            "degree": ["IE"],
+            "location": "Tlaquepaque, Jalisco",
+            "tags": ["Manufactura"]
+        
+        },
+
+
+        {
+            "company": "Alten",
+            "program": "Alten Jobs",
+            "description": "Bolsa de trabajo de Alten",
+            "url": "https://www.linkedin.com/company/altenmx/jobs/",
+            "degree": ["IE"],
+            "location": "Queretaro",
+            "tags": ["Embebidos"]
+        
+        },
+
+        {
+            "company": "Continental",
+            "program": "Continental Jobs",
+            "description": "Bolsa de trabajo de Continental",
+            "url": "https://jobs.continental.com/en/#/",
+            "degree": ["IE"],
+            "location": "Guadalajara",
+            "tags": ["PLC"]
+        
+        },
+        {
+            "company": "NXP",
+            "program": "NXP Jobs",
+            "description": "Bolsa de trabajo de NXP",
+            "url": "https://nxp.wd3.myworkdayjobs.com/careers",
+            "degree": ["IE"],
+            "location": "Guadalajara",
+            "tags": ["Embebidos"]
+        
+        },
+
+
+        {
+            "company": "SEMTECH",
+            "program": "SEMTECH Jobs",
+            "description": "Bolsa de trabajo de SEMTECH",
+            "url": "https://www.linkedin.com/company/semtech//",
+            "degree": ["IE"],
+            "location": "Aguascalientes",
+            "tags": ["Layout"]
+        
+        },
+
+        {
+            "company": "Micron",
+            "program": "Micron Jobs",
+            "description": "Bolsa de trabajo de Micron",
+            "url": "https://www.linkedin.com/company/micron-technology/jobs/",
+            "degree": ["IE"],
+            "location": "Aguascalientes",
+            "tags": ["Layout"]
+        
+        },
+
+        {
+            "company": "Circuify",
+            "program": "Circuify Jobs",
+            "description": "Bolsa de trabajo de Circuify",
+            "url": "https://www.linkedin.com/company/circuify/",
+            "degree": ["IE"],
+            "location": "Aguascalientes",
+            "tags": ["Layout"]
+        
+        },
+
+        {
+            "company": "BigBang Semiconductors",
+            "program": "BigBang Jobs",
+            "description": "Bolsa de trabajo de BigBang Semiconductors",
+            "url": "https://www.linkedin.com/company/bigbang-semi/",
+            "degree": ["IE"],
+            "location": "Aguascalientes",
+            "tags": ["Layout"]
+        
+        },
+        {
+            "company": "Bosch",
+            "program": "Bosch Jobs",
+            "description": "Bolsa de trabajo de Bosch",
+            "url": "https://www.linkedin.com/company/boschmexico/jobs/",
+            "degree": ["IE"],
+            "location": "Guadalajara",
+            "tags": ["Embebidos", "PLC"]
+        
+        },
+
+        {
+            "company": "Electronic Cats",
+            "program": "Pagina de Linkedin Electronic Cats",
+            "description": "Empresa de Hacking de aguascalientes",
+            "url": "https://www.linkedin.com/company/electroniccats/",
+            "degree": ["IE"],
+            "location": "Aguascalientes",
+            "tags": ["Embebidos", "Hacking"]
+        
+        },
+
+
+        {
+            "company": "AheadComputing",
+            "program": "Ahead Computing Jobs",
+            "description": "Bolsa de trabajo de AheadComputing, No tiene para interns (Julio2026)",
+            "url": "https://www.aheadcomputing.com/careers",
+            "degree": ["IE"],
+            "location": "Guadalajara",
+            "tags": ["Diseño Digital", "FPGA"]
+        
+        },
+
+        {
+            "company": "Intel",
+                "program": "Intel Jobs",
+                "description": "Bolsa de trabajo de intel, tiene vacantes en guadalajara (Tengo entendido que la mayoria son presencial).",
+                "url": "https://intel.wd1.myworkdayjobs.com/External",
+                "degree": ["IE"],
+                "location": "Guadalajara",
+                "tags": ["Intel", "Diseño Digital", "FPGA"]
+            
+        },
+        {
             "company": "Oracle",
             "program": "Oracle Next Education ONE",
             "description": "Al terminar el programa de certificación ONE, de Oracle, tendrás acceso a la plataforma donde diferentes empresas asociadas con Oracle envían convocatorias de trabajo y podrás acceder al Discord de alumni ONE donde también suele haber distintas ofertas laborales.",
@@ -167,9 +345,9 @@
             "program": "Krasamo Aguascalientes",
             "description": "Empresa enfocada en desarrollo de software y soluciones móviles, con presencia en Aguascalientes y EE.UU.",
             "url": "https://www.krasamo.com/",
-            "degree": ["ISC", "ICI"],
+            "degree": ["ISC", "ICI", "IE"],
             "location": "Aguascalientes, México",
-            "tags": ["Desarrollo de Software", "Móvil"]
+            "tags": ["Embebidos", "Móvil"]
         },
         {
             "company": "Capgemini",
