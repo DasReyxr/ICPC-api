@@ -1,39 +1,129 @@
-# Guía de Contribución
+# Guía para contribuir
 
-¡Gracias por tu interés en contribuir a nuestra API estática! Los datos viven en este repositorio y cualquier persona puede ayudar agregando o corrigiendo información sin necesidad de tocar el código del blog o las aplicaciones.
+¡Gracias por querer colaborar con Jaleaki!
 
-## Convenciones
+El objetivo del proyecto es mantener un directorio confiable, actualizado y fácil de consultar. Cualquier ayuda es bienvenida.
 
-Al agregar o modificar datos, por favor respeta las siguientes reglas de idioma:
+## ¿Qué puedes aportar?
 
-- **Las claves (keys) del JSON van en inglés:** e.g., `id`, `name`, `description`.
-- **Los valores y el contenido van en español:** La información que leerán los usuarios debe estar en español.
-- **Esquemas JSON (Schemas):** Todos los archivos `schema.json` que crees deben utilizar el estándar `2020-12` para mantener la consistencia en todo el repositorio. Asegúrate de incluir en la primera línea: `"$schema": "https://json-schema.org/draft/2020-12/schema"`.
+Puedes contribuir agregando o mejorando:
 
-## Cómo contribuir
+- Empleos.
+- Programas de internships.
+- Certificaciones.
+- Correcciones de información.
+- Enlaces rotos.
+- Mejoras a la documentación.
 
-Para agregar nuevos datos o corregir información existente (como clubes, certificados o comunidades), sigue estos pasos:
+## Antes de agregar un registro
 
-1. **Haz un Fork** de este repositorio.
-2. **Crea una nueva rama** para tus cambios:
+Verifica que:
 
-   ```bash
-   git checkout -b actualizar-datos
-   ```
+- Sea una fuente oficial.
+- El enlace funcione correctamente.
+- No exista un registro duplicado.
+- La descripción sea clara y breve.
 
-3. **Modifica los archivos JSON** necesarios (ej. `credentials/data.json` o `communities/data.json`). Asegúrate de que el formato JSON sea válido.
-4. **Haz commit** de tus cambios:
+## Jobs
 
-   ```bash
-   git commit -m "Agrega nuevo certificado de ejemplo"
-   ```
+Se aceptan, por ejemplo:
 
-5. **Haz push** a tu rama:
+- Páginas oficiales de empleo de empresas.
+- Portales universitarios.
+- Programas de contratación.
+- Job boards confiables.
 
-   ```bash
-   git push origin actualizar-datos
-   ```
+Evita agregar:
 
-6. **Abre un Pull Request (PR)** en este repositorio explicando brevemente los cambios que realizaste.
+- Enlaces de referidos.
+- Sitios fraudulentos.
+- Vacantes expiradas.
+- Información sin fuente.
 
-Una vez revisado, tu PR será fusionado y los datos estarán disponibles automáticamente a través de GitHub Pages.
+## Internships
+
+Se recomienda agregar únicamente programas oficiales, tales como:
+
+- Empresas.
+- Universidades.
+- Instituciones gubernamentales.
+- Organizaciones reconocidas.
+
+## Credentials
+
+Se aceptan:
+
+- Certificaciones.
+- Certificados.
+- Badges.
+- Programas oficiales de formación.
+
+Siempre que provengan del proveedor oficial.
+
+## Formato del JSON
+
+Mantén el mismo formato utilizado por el proyecto.
+
+Ejemplo:
+
+```json
+{
+    "company": "Example",
+    "type": "Company",
+    "description": "...",
+    "location": "Remoto",
+    "degree": ["ISC"],
+    "tags": ["Software"],
+    "url": "https://..."
+}
+```
+
+## Proceso para contribuir
+
+1. Haz un Fork del repositorio.
+2. Crea una rama para tus cambios.
+
+```bash
+git checkout -b feature/nuevo-recurso
+```
+
+3. Realiza las modificaciones.
+4. Verifica que el JSON sea válido.
+5. Haz un commit descriptivo.
+
+```bash
+git commit -m "Agregar NVIDIA Careers"
+```
+
+6. Sube tu rama.
+
+```bash
+git push origin feature/nuevo-recurso
+```
+
+7. Abre un Pull Request explicando los cambios realizados.
+
+## Recomendaciones
+
+- Usa enlaces oficiales.
+- Escribe descripciones claras y concisas.
+- Evita lenguaje publicitario.
+- Mantén el formato del proyecto.
+- No agregues información duplicada.
+
+## Reportar problemas
+
+Si encuentras:
+
+- Enlaces rotos.
+- Información incorrecta.
+- Programas desactualizados.
+- Registros duplicados.
+
+Puedes abrir un **Issue** describiendo el problema.
+
+## Código de conducta
+
+Mantén un ambiente de colaboración y respeto.
+
+Todas las contribuciones son revisadas con el objetivo de conservar un directorio útil y de calidad para toda la comunidad.
