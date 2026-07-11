@@ -1,6 +1,18 @@
 {
     "jobs": [
         {
+            "company": "Balluff",
+            "program": "Balluff Jobs",
+            "description": "Bolsa de trabajo de Balluff",
+            "url": "https://www.balluff.com/en-nz/careers-at-balluff",
+            "degree": ["IE"],
+            "location": "Queretaro",
+            "tags": ["Manufactura"]
+        
+        },
+
+
+        {
             "company": "Siemens",
             "program": "Siemens Jobs",
             "description": "Bolsa de trabajo de Siemens",
