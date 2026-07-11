@@ -248,11 +248,22 @@
 <script>
 
 // ── Helpers ────────────────────────────────────────────────────────────
-const unique = arr =>
-  [...new Set(arr.filter(v => v != null))]
-    .map(v => String(v))
-    .sort((a, b) => a.localeCompare(b));
+function unique(arr) {
+  const map = new Map();
 
+  arr
+    .filter(Boolean)
+    .forEach(v => {
+      const text = String(v).trim();
+      const key = text.toLowerCase();
+
+      if (!map.has(key))
+        map.set(key, text);
+    });
+
+  return [...map.values()]
+    .sort((a,b)=>a.localeCompare(b));
+}
 function esc(v) {
   return String(v ?? '').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
@@ -262,6 +273,8 @@ function setOpts(sel, vals, current='') {
   sel.innerHTML = '<option value="">Todos</option>' +
     unique(vals).map(v => `<option${prev===v?' selected':''}>${esc(v)}</option>`).join('');
 }
+
+
 
 function downloadJSON(filename, data) {
   const blob = new Blob([JSON.stringify(data, null, 2)], { type:'application/json' });
@@ -316,8 +329,10 @@ function switchTab(tab, btn) {
 // ════════════════════════════════════════════════════════════════════════
 
 function populateJobFilters() {
-  setOpts(document.getElementById('j-location'), JOBS.map(j => j.location));
-}
+setOpts(
+    document.getElementById('j-location'),
+    JOBS.flatMap(j => j.location || [])
+);}
 
 function filterJobs() {
   const q   = document.getElementById('j-search').value.toLowerCase().trim();
