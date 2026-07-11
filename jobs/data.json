@@ -4,7 +4,7 @@
             "company": "Oracle",
             "program": "Oracle Next Education ONE",
             "description": "Al terminar el programa de certificación ONE, de Oracle, tendrás acceso a la plataforma donde diferentes empresas asociadas con Oracle envían convocatorias de trabajo y podrás acceder al Discord de alumni ONE donde también suele haber distintas ofertas laborales.",
-            "url": "https://www.oracle.com/mx/education/oracle-next-education/",
+            "url": "https://www.oracle.com/latam/education/oracle-next-education/",
             "degree": ["ISC", "ICI"],
             "location": "México",
             "tags": ["Oracle", "ONE", "Certificación", "Empleo"]
@@ -13,7 +13,7 @@
             "company": "ESCOM IPN",
             "program": "Bolsa Escom",
             "description": "Bolsa de trabajo de múltiples empresas en México a través de la página de Facebook ESCOM del IPN.",
-            "url": "https://www.facebook.com/bolsaescom/",
+            "url": "https://www.escom.ipn.mx/htmls/escomunidad/bolsaTrabajo.php",
             "degree": ["ISC", "ICI"],
             "location": "México",
             "tags": ["Bolsa de trabajo", "IPN", "Facebook"]
@@ -113,7 +113,7 @@
             "program": "Bolsa de trabajo en Softtek",
             "description": "Bolsa de trabajo en Softtek.",
             "url": "https://www.softtek.com/es-mx/haz-tu-carrera-en-softtek",
-            "degree": ["ISC", "ICI"],
+            "degree": ["ISC", "ICI", "IE"],
             "location": "México",
             "tags": ["Softtek", "Empleo"]
         },
@@ -145,15 +145,6 @@
             "tags": ["AWS", "Certificación", "Empleo", "Estudiantes"]
         },
         {
-            "company": "Proyecto Nutria",
-            "program": "Proyecto Nutria ESCOM IPN",
-            "description": "Busca ayudar a personas que buscan trabajar en Grandes Empresas Tecnológicas como Microsoft, Facebook, Google, etc (FAANG). Suelen dar información importante y actualizada acerca de internships y oportunidades de empleo y guías de cómo hacer entrevistas de trabajo.",
-            "url": "https://proyectonutria.com/",
-            "degree": ["ISC", "ICI"],
-            "location": "México",
-            "tags": ["FAANG", "Internships", "Entrevistas", "Discord"]
-        },
-        {
             "company": "UAA",
             "program": "Bolsa Universitaria de Trabajo de la UAA",
             "description": "Bolsa de trabajo exclusiva para estudiantes y egresados de la UAA.",
@@ -170,15 +161,6 @@
             "degree": ["ISC", "ICI"],
             "location": "Aguascalientes, México",
             "tags": ["Consultoría", "Desarrollo de Software"]
-        },
-        {
-            "company": "Softtek",
-            "program": "Softtek Aguascalientes",
-            "description": "Multinacional mexicana de soluciones TI, con oficinas en diversas ciudades de México, incluyendo Aguascalientes.",
-            "url": "https://www.softtek.com/es/",
-            "degree": ["ISC", "ICI"],
-            "location": "Aguascalientes, México",
-            "tags": ["Softtek", "TI"]
         },
         {
             "company": "Krasamo",
