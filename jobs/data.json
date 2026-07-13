@@ -1,6 +1,41 @@
 {
     "jobs": [
         {
+            "company": "Freelancer",
+            "type" : "Freelance",
+            "description": "Plataforma de trabajo freelance que conecta a profesionales independientes con clientes de todo el mundo.",
+            "url": "https://www.freelancer.mx/",
+            "degree": ["ICI","ISC","IE"],
+            "location": ["Remote"],
+            "tags": [""] },
+
+        {
+            "company": "Torc Dev",
+            "type" : "Freelance",
+            "description": "Plataforma de trabajo freelance que conecta a profesionales independientes con clientes de todo el mundo.",
+            "url": "https://platform.torc.dev/",
+            "degree": ["ICI","ISC","IE"],
+            "location": ["Remote"],
+            "tags": [""] },
+
+        {
+            "company": "Howdy",
+            "type" : "Freelance",
+            "description": "Plataforma de trabajo freelance que conecta a profesionales independientes con clientes de todo el mundo.",
+            "url": "https://www.howdy.com/",
+            "degree": ["ICI","ISC","IE"],
+            "location": ["Remote"],
+            "tags": [""] },
+
+        {
+            "company": "Upwork",
+            "type" : "Freelance",
+            "description": "Plataforma de trabajo freelance que conecta a profesionales independientes con clientes de todo el mundo.",
+            "url": "https://www.upwork.com/",
+            "degree": ["ICI","ISC","IE"],
+            "location": ["Remote"],
+            "tags": [""] },
+        {
             "company": "Improving Ags",
             "type" : "Company",
             "description": "Empresa local de software",
