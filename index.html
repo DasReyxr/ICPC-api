@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Guscador d jales</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <style>
     :root {
       --bg: #0d1117;
@@ -112,6 +114,79 @@
     .spinner { width: 20px; height: 20px; border: 3px solid var(--panel-border); border-top-color: var(--accent); border-radius: 50%; animation: spin .6s linear infinite; }
     @keyframes spin { to { transform: rotate(360deg); } }
     .empty-state { grid-column: 1/-1; text-align: center; padding: 50px; color: var(--text-dim); font-family: var(--mono); font-size: 12.5px; }
+
+    /* ── Map ── */
+    #map-section {
+      background: var(--panel);
+      border-bottom: 1px solid var(--panel-border);
+      padding: 14px 28px 16px;
+    }
+    #map-section .map-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    #map-section .map-title {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    #map-section .map-legend {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      color: var(--text-dim);
+    }
+    #map-section .map-legend span {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    #map-section .leg-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    #map-container {
+      height: 320px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--panel-border);
+    }
+    /* Override Leaflet popup to match dark theme */
+    .leaflet-popup-content-wrapper {
+      background: #1a222c;
+      color: var(--text, #d7dde5);
+      border: 1px solid #232b35;
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+    }
+    .leaflet-popup-tip { background: #1a222c; }
+    .leaflet-popup-content { margin: 10px 14px; line-height: 1.6; }
+    .pop-city { font-weight: 700; font-size: 13px; color: #4fd1a5; }
+    .pop-row  { color: #7c8794; }
+    .pop-row strong { color: #d7dde5; }
+    /* circle markers */
+    .map-marker {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 700;
+      color: #05130e;
+      border-radius: 50%;
+      border: 2px solid rgba(0,0,0,.25);
+      cursor: pointer;
+      transition: transform .15s;
+    }
+    .map-marker:hover { transform: scale(1.12); }
   </style>
 </head>
 <body>
@@ -125,6 +200,19 @@
 </header>
 
 <div id="loading"><div class="spinner"></div> Cargando datos…</div>
+
+<!-- ══════════ MAP ══════════
+<div id="map-section" style="display:none">
+  <div class="map-header">
+    <span class="map-title">📍 Distribución por ubicación — <span id="map-tab-label">Jobs</span></span>
+    <div class="map-legend">
+      <span><span class="leg-dot" style="background:#4fd1a5"></span> Jobs</span>
+      <span><span class="leg-dot" style="background:#60b4ff"></span> Internships</span>
+      <span><span class="leg-dot" style="background:#f59e0b"></span> Ambos</span>
+    </div>
+  </div>
+  <div id="map-container"></div>
+</div> -->
 
 <div id="app" style="display:none">
 
@@ -152,6 +240,10 @@
       <div class="filter-group">
         <label>Ubicación</label>
         <select id="j-location"><option value="">Todas</option></select>
+      </div>
+      <div class="filter-group">
+        <label>Tag</label>
+        <select id="j-tag"><option value="">Todos</option></select>
       </div>
       <div class="filter-group" style="align-self:end">
         <button class="reset-btn" id="j-reset">↺ limpiar filtros</button>
@@ -183,6 +275,10 @@
       <div class="filter-group">
         <label>Ubicación</label>
         <select id="i-location"><option value="">Todas</option></select>
+      </div>
+      <div class="filter-group">
+        <label>Tag</label>
+        <select id="i-tag"><option value="">Todos</option></select>
       </div>
       <div class="filter-group" style="align-self:end">
         <button class="reset-btn" id="i-reset">↺ limpiar filtros</button>
@@ -322,6 +418,10 @@ function switchTab(tab, btn) {
   document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
   btn.classList.add('active');
   document.getElementById('panel-' + tab).classList.add('active');
+  const labels = { jobs: 'Jobs', internships: 'Internships', credentials: 'Credentials' };
+  const el = document.getElementById('map-tab-label');
+  if (el) el.textContent = labels[tab] || tab;
+  updateMap();
 }
 
 // ════════════════════════════════════════════════════════════════════════
@@ -329,20 +429,21 @@ function switchTab(tab, btn) {
 // ════════════════════════════════════════════════════════════════════════
 
 function populateJobFilters() {
-setOpts(
-    document.getElementById('j-location'),
-    JOBS.flatMap(j => j.location || [])
-);}
+  setOpts(document.getElementById('j-location'), JOBS.flatMap(j => j.location || []));
+  setOpts(document.getElementById('j-tag'),      JOBS.flatMap(j => j.tags || []));
+}
 
 function filterJobs() {
   const q   = document.getElementById('j-search').value.toLowerCase().trim();
   const deg = document.getElementById('j-degree').value;
   const loc = document.getElementById('j-location').value;
+  const tag = document.getElementById('j-tag').value;
   return JOBS.filter(j => {
     const txt = `${j.company} ${j.type} ${j.description} ${(j.tags||[]).join(' ')}`.toLowerCase();
     if (q   && !txt.includes(q)) return false;
-    if (deg && !(Array.isArray(j.degree) ? j.degree.includes(deg) : j.degree===deg)) return false;
-    if (loc && j.location !== loc) return false;
+    if (deg && !(Array.isArray(j.degree)   ? j.degree.includes(deg)   : j.degree === deg))   return false;
+    if (loc && !(Array.isArray(j.location) ? j.location.includes(loc) : j.location === loc)) return false;
+    if (tag && !(j.tags||[]).includes(tag)) return false;
     return true;
   });
 }
@@ -357,7 +458,7 @@ function renderJob(j) {
       <h3>${j.url ? `<a href="${esc(j.url)}" target="_blank" rel="noopener">${esc(j.company)}</a>` : esc(j.company)}</h3>
       <button class="edit-btn" data-action="j-edit" data-key="${esc(j._key)}">✎ editar</button>
     </div>
-    <div class="meta"><span>${esc(j.type)}</span>${j.location?`<span>📍 ${esc(j.location)}</span>`:''}</div>
+    <div class="meta"><span>${esc(j.type)}</span>${j.location ? `<span>📍 ${esc(Array.isArray(j.location) ? j.location.join(', ') : j.location)}</span>` : ''}</div>
     ${j.description ? `<p class="desc">${esc(j.description)}</p>` : ''}
     <div class="chips">
       ${degs.map(d=>`<span class="chip degree">${esc(d)}</span>`).join('')}
@@ -371,16 +472,16 @@ function renderJobEdit(j) {
   const degs = (Array.isArray(j.degree)?j.degree:[j.degree]).filter(Boolean);
   return `<div class="card editing" data-key="${esc(j._key)}">
     <div class="edit-field"><label>Empresa</label>
-      <input data-field="company" value="${esc(j.type)}" /></div>
-    <div class="edit-field"><label>typea</label>
-      <input data-field="type" value="${esc(j.company)}" /></div>
+      <input data-field="company" value="${esc(j.company)}" /></div>
+    <div class="edit-field"><label>Tipo</label>
+      <input data-field="type" value="${esc(j.type)}" /></div>
     <div class="edit-field"><label>Descripción</label>
       <textarea data-field="description">${esc(j.description)}</textarea></div>
     <div class="edit-row-2">
       <div class="edit-field"><label>URL</label>
         <input data-field="url" value="${esc(j.url)}" /></div>
-      <div class="edit-field"><label>Ubicación</label>
-        <input data-field="location" value="${esc(j.location)}" /></div>
+      <div class="edit-field"><label>Ubicación (coma)</label>
+        <input data-field="location" value="${esc(Array.isArray(j.location) ? j.location.join(', ') : j.location)}" /></div>
     </div>
     <div class="edit-row-2">
       <div class="edit-field"><label>Carreras (coma)</label>
@@ -403,6 +504,7 @@ function renderJobs() {
     ? results.map(renderJob).join('')
     : '<div class="empty-state">Sin resultados.</div>';
   updateDirty('j');
+  updateMap();
 }
 
 function updateDirty(prefix) {
@@ -426,7 +528,7 @@ function handleJobClick(e) {
     card.querySelectorAll('[data-field]').forEach(el => {
       const f = el.dataset.field;
       let v = el.value;
-      if (f === 'degree' || f === 'tags')
+      if (f === 'degree' || f === 'tags' || f === 'location')
         v = v.split(',').map(s=>s.trim()).filter(Boolean);
       patch[f] = v;
     });
@@ -450,18 +552,21 @@ function populateInternFilters() {
   const sel = document.getElementById('i-degree');
   sel.innerHTML = '<option value="">Todas</option>' +
     degs.map(d => `<option>${esc(d)}</option>`).join('');
-  setOpts(document.getElementById('i-location'), INTERNSHIPS.map(x => x.location));
+  setOpts(document.getElementById('i-location'), INTERNSHIPS.flatMap(x => x.location || []));
+  setOpts(document.getElementById('i-tag'),      INTERNSHIPS.flatMap(x => x.tags || []));
 }
 
 function filterInternships() {
   const q   = document.getElementById('i-search').value.toLowerCase().trim();
   const deg = document.getElementById('i-degree').value;
   const loc = document.getElementById('i-location').value;
+  const tag = document.getElementById('i-tag').value;
   return INTERNSHIPS.filter(x => {
-    const txt = `${x.company} ${x.type} ${x.description||''} ${(x.tags||[]).join(' ')}`.toLowerCase();
+    const txt = `${x.company} ${x.company} ${x.description||''} ${(x.tags||[]).join(' ')}`.toLowerCase();
     if (q   && !txt.includes(q)) return false;
-    if (deg && !(Array.isArray(x.degree) ? x.degree.includes(deg) : x.degree === deg)) return false;
-    if (loc && x.location !== loc) return false;
+    if (deg && !(Array.isArray(x.degree)   ? x.degree.includes(deg)   : x.degree === deg))   return false;
+    if (loc && !(Array.isArray(x.location) ? x.location.includes(loc) : x.location === loc)) return false;
+    if (tag && !(x.tags||[]).includes(tag)) return false;
     return true;
   });
 }
@@ -473,10 +578,10 @@ function renderInternship(x) {
   const dirty = dirtyInternships.has(x._key);
   return `<div class="card${dirty ? ' dirty' : ''}" data-key="${esc(x._key)}">
     <div class="row-top">
-      <h3>${x.url ? `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.type)}</a>` : esc(x.type)}</h3>
+      <h3>${x.url ? `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.company)}</a>` : esc(x.company)}</h3>
       <button class="edit-btn" data-action="i-edit" data-key="${esc(x._key)}">✎ editar</button>
     </div>
-    <div class="meta"><span>🏢 ${esc(x.company)}</span>${x.location ? `<span>📍 ${esc(x.location)}</span>` : ''}</div>
+    <div class="meta"><span>🏢 ${esc(x.type)}</span>${x.location ? `<span>📍 ${esc(Array.isArray(x.location) ? x.location.join(', ') : x.location)}</span>` : ''}</div>
     ${x.description ? `<p class="desc">${esc(x.description)}</p>` : ''}
     <div class="chips">
       ${degs.map(d => `<span class="chip degree">${esc(d)}</span>`).join('')}
@@ -490,16 +595,16 @@ function renderInternshipEdit(x) {
   const degs = (Array.isArray(x.degree) ? x.degree : [x.degree]).filter(Boolean);
   return `<div class="card editing" data-key="${esc(x._key)}">
     <div class="edit-field"><label>Empresa</label>
-      <input data-field="company" value="${esc(x.company)}" /></div>
+      <input data-field="company" value="${esc(x.type)}" /></div>
     <div class="edit-field"><label>typea</label>
-      <input data-field="type" value="${esc(x.type)}" /></div>
+      <input data-field="type" value="${esc(x.company)}" /></div>
     <div class="edit-field"><label>Descripción</label>
       <textarea data-field="description">${esc(x.description)}</textarea></div>
     <div class="edit-row-2">
       <div class="edit-field"><label>URL</label>
         <input data-field="url" value="${esc(x.url)}" /></div>
-      <div class="edit-field"><label>Ubicación</label>
-        <input data-field="location" value="${esc(x.location)}" /></div>
+      <div class="edit-field"><label>Ubicación (coma)</label>
+        <input data-field="location" value="${esc(Array.isArray(x.location) ? x.location.join(', ') : x.location)}" /></div>
     </div>
     <div class="edit-row-2">
       <div class="edit-field"><label>Carreras (coma)</label>
@@ -522,6 +627,7 @@ function renderInternships() {
     ? results.map(renderInternship).join('')
     : '<div class="empty-state">Sin resultados.</div>';
   updateDirty('i');
+  updateMap();
 }
 
 function handleInternshipClick(e) {
@@ -537,7 +643,7 @@ function handleInternshipClick(e) {
     card.querySelectorAll('[data-field]').forEach(el => {
       const f = el.dataset.field;
       let v = el.value;
-      if (f === 'degree' || f === 'tags')
+      if (f === 'degree' || f === 'tags' || f === 'location')
         v = v.split(',').map(s => s.trim()).filter(Boolean);
       patch[f] = v;
     });
@@ -685,6 +791,135 @@ function handleCredClick(e) {
 }
 
 // ════════════════════════════════════════════════════════════════════════
+//  MAP
+// ════════════════════════════════════════════════════════════════════════
+
+// Canonical city → [lat, lng] for every location string used in the data
+const CITY_COORDS = {
+  'aguascalientes':        [21.8818,  -102.2916],
+  'cdmx':                  [19.4326,   -99.1332],
+  'guadalajara':           [20.6597,  -103.3496],
+  'monterrey':             [25.6866,  -100.3161],
+  'queretaro':             [20.5888,  -100.3899],
+  'mexico':                [23.6345,   -102.5528],  // center of Mexico
+  'remote':                [23.6345,   -102.5528],
+  'online':                [23.6345,   -102.5528],
+  'estados unidos':        [37.0902,    -95.7129],
+  'tlaquepaque, jalisco':  [20.6341,  -103.3119],
+  'guanajuato':            [21.0190,  -101.2574],
+};
+
+// Normalise a location string to a lookup key
+function locKey(s) {
+  return String(s).trim().toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '');  // strip accents
+}
+
+let MAP = null;
+let mapMarkerLayer = null;
+let currentMapTab = 'jobs';   // 'jobs' | 'internships' | 'both'
+
+function initMap() {
+  MAP = L.map('map-container', {
+    center: [23.6, -102.5],
+    zoom: 5,
+    zoomControl: true,
+    attributionControl: false,
+  });
+
+  // Dark tile layer (CartoDB dark matter, no API key needed)
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', {
+    subdomains: 'abcd',
+    maxZoom: 19,
+  }).addTo(MAP);
+
+  // Light label layer on top
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png', {
+    subdomains: 'abcd',
+    maxZoom: 19,
+    pane: 'shadowPane',
+  }).addTo(MAP);
+
+  mapMarkerLayer = L.layerGroup().addTo(MAP);
+  document.getElementById('map-section').style.display = 'block';
+}
+
+// Build count map: { normKey -> { label, lat, lng, jobs, interns } }
+function buildCounts(jobResults, internResults) {
+  const counts = {};
+
+  const add = (locArr, field) => {
+    const locs = Array.isArray(locArr) ? locArr : [locArr];
+    locs.filter(Boolean).forEach(raw => {
+      const k = locKey(raw);
+      const coords = CITY_COORDS[k];
+      if (!coords) return;          // skip unmapped locations
+      if (!counts[k]) counts[k] = { label: raw, lat: coords[0], lng: coords[1], jobs: 0, interns: 0 };
+      counts[k][field]++;
+    });
+  };
+
+  jobResults.forEach(j    => add(j.location,    'jobs'));
+  internResults.forEach(x => add(x.location, 'interns'));
+  return counts;
+}
+
+function updateMap() {
+  if (!MAP) return;
+  mapMarkerLayer.clearLayers();
+
+  const jobResults    = filterJobs();
+  const internResults = filterInternships();
+  const counts        = buildCounts(jobResults, internResults);
+
+  Object.values(counts).forEach(({ label, lat, lng, jobs, interns }) => {
+    const total = jobs + interns;
+    if (total === 0) return;
+
+    // Color: jobs-only = accent green, interns-only = blue, both = amber
+    const color = (jobs > 0 && interns > 0) ? '#f59e0b'
+                : (interns > 0)             ? '#60b4ff'
+                :                             '#4fd1a5';
+
+    // Size scales with count (min 28 px, +4 per extra offer, max 56 px)
+    const size = Math.min(56, 28 + (total - 1) * 4);
+    const fontSize = size < 36 ? 11 : 13;
+
+    const icon = L.divIcon({
+      className: '',
+      html: `<div class="map-marker" style="width:${size}px;height:${size}px;font-size:${fontSize}px;background:${color};">${total}</div>`,
+      iconSize: [size, size],
+      iconAnchor: [size / 2, size / 2],
+    });
+
+    const marker = L.marker([lat, lng], { icon });
+
+    const lines = [];
+    if (jobs    > 0) lines.push(`<div class="pop-row">💼 Jobs: <strong>${jobs}</strong></div>`);
+    if (interns > 0) lines.push(`<div class="pop-row">🎓 Internships: <strong>${interns}</strong></div>`);
+
+    marker.bindPopup(`
+      <div class="pop-city">${label}</div>
+      ${lines.join('')}
+    `, { maxWidth: 200 });
+
+    // Clicking the marker sets the location filter on the active tab
+    marker.on('click', () => {
+      const activeTab = document.querySelector('.tab-btn.active')?.textContent.trim();
+      if (activeTab?.includes('Jobs')) {
+        document.getElementById('j-location').value = label;
+        renderJobs();
+      } else if (activeTab?.includes('Intern')) {
+        document.getElementById('i-location').value = label;
+        renderInternships();
+      }
+    });
+
+    marker.addTo(mapMarkerLayer);
+  });
+}
+
+// ════════════════════════════════════════════════════════════════════════
 //  Bootstrap
 // ════════════════════════════════════════════════════════════════════════
 
@@ -721,11 +956,13 @@ async function loadData() {
   refreshCredFilters();
 
   // Wire jobs
-  ['j-search','j-degree','j-location'].forEach(id =>
+  ['j-search','j-degree','j-location','j-tag'].forEach(id =>
     document.getElementById(id).addEventListener('input', renderJobs));
+  ['j-location','j-tag'].forEach(id =>
+    document.getElementById(id).addEventListener('change', renderJobs));
   document.getElementById('j-reset').addEventListener('click', () => {
     document.getElementById('j-search').value='';
-    ['j-degree','j-location'].forEach(id => document.getElementById(id).value='');
+    ['j-degree','j-location','j-tag'].forEach(id => document.getElementById(id).value='');
     renderJobs();
   });
   document.getElementById('j-grid').addEventListener('click', handleJobClick);
@@ -733,11 +970,13 @@ async function loadData() {
     downloadJSON('jobs.edited.json', { jobs: JOBS.map(({_key,...r})=>r) }));
 
   // Wire internships
-  ['i-search','i-degree','i-location'].forEach(id =>
+  ['i-search','i-degree','i-location','i-tag'].forEach(id =>
     document.getElementById(id).addEventListener('input', renderInternships));
+  ['i-location','i-tag'].forEach(id =>
+    document.getElementById(id).addEventListener('change', renderInternships));
   document.getElementById('i-reset').addEventListener('click', () => {
     document.getElementById('i-search').value='';
-    ['i-degree','i-location'].forEach(id => document.getElementById(id).value='');
+    ['i-degree','i-location','i-tag'].forEach(id => document.getElementById(id).value='');
     renderInternships();
   });
   document.getElementById('i-grid').addEventListener('click', handleInternshipClick);
