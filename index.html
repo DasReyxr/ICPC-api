@@ -245,6 +245,10 @@
         <label>Tag</label>
         <select id="j-tag"><option value="">Todos</option></select>
       </div>
+      <div class="filter-group">
+        <label>Type</label>
+        <select id="j-type"><option value="">Todos</option></select>
+      </div>
       <div class="filter-group" style="align-self:end">
         <button class="reset-btn" id="j-reset">↺ limpiar filtros</button>
       </div>
@@ -431,6 +435,7 @@ function switchTab(tab, btn) {
 function populateJobFilters() {
   setOpts(document.getElementById('j-location'), JOBS.flatMap(j => j.location || []));
   setOpts(document.getElementById('j-tag'),      JOBS.flatMap(j => j.tags || []));
+  setOpts(document.getElementById('j-type'),     JOBS.map(j => j.type));
 }
 
 function filterJobs() {
@@ -438,12 +443,14 @@ function filterJobs() {
   const deg = document.getElementById('j-degree').value;
   const loc = document.getElementById('j-location').value;
   const tag = document.getElementById('j-tag').value;
+  const type = document.getElementById('j-type').value;
   return JOBS.filter(j => {
-    const txt = `${j.company} ${j.type} ${j.description} ${(j.tags||[]).join(' ')}`.toLowerCase();
+    const txt = `${j.company} ${j.type} ${j.description} ${(j.tags||[]).join(' ')} `.toLowerCase();
     if (q   && !txt.includes(q)) return false;
     if (deg && !(Array.isArray(j.degree)   ? j.degree.includes(deg)   : j.degree === deg))   return false;
     if (loc && !(Array.isArray(j.location) ? j.location.includes(loc) : j.location === loc)) return false;
     if (tag && !(j.tags||[]).includes(tag)) return false;
+    if (type && j.type !== type) return false;
     return true;
   });
 }
@@ -452,6 +459,7 @@ function renderJob(j) {
   if (editingJob === j._key) return renderJobEdit(j);
   const degs = (Array.isArray(j.degree)?j.degree:[j.degree]).filter(Boolean);
   const tags = (j.tags||[]);
+
   const dirty = dirtyJobs.has(j._key);
   return `<div class="card${dirty?' dirty':''}" data-key="${esc(j._key)}">
     <div class="row-top">
@@ -958,13 +966,16 @@ async function loadData() {
   // Wire jobs
   ['j-search','j-degree','j-location','j-tag'].forEach(id =>
     document.getElementById(id).addEventListener('input', renderJobs));
-  ['j-location','j-tag'].forEach(id =>
+
+  ['j-degree','j-type','j-location','j-tag'].forEach(id =>
     document.getElementById(id).addEventListener('change', renderJobs));
+  
   document.getElementById('j-reset').addEventListener('click', () => {
     document.getElementById('j-search').value='';
-    ['j-degree','j-location','j-tag'].forEach(id => document.getElementById(id).value='');
+    ['j-type','j-degree','j-location','j-tag'].forEach(id => document.getElementById(id).value='');
     renderJobs();
   });
+
   document.getElementById('j-grid').addEventListener('click', handleJobClick);
   document.getElementById('j-export').addEventListener('click', () =>
     downloadJSON('jobs.edited.json', { jobs: JOBS.map(({_key,...r})=>r) }));

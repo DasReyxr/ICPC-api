@@ -864,7 +864,7 @@
         },
         {
             "company": "Codeforces",
-            "type" : "Company",
+            "type" : "JobBoard",
             "description": "Listado de empresas que les interesan los participantes de competencias de programación competitiva (Telegram ha sido patrocinador de Codeforces).",
             "url": "https://codeforces.com/blog/entry/113837",
             "degree": ["ISC", "ICI"],
